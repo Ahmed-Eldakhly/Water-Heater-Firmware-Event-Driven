@@ -1,0 +1,2604 @@
+Microchip MPLAB XC8 Compiler V2.10 ()
+
+Linker command line:
+
+-W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
+  -cs \
+  -h+dist/default/production\SwiftAct_Heater_EventDriven.X.production.sym \
+  --cmf=dist/default/production\SwiftAct_Heater_EventDriven.X.production.cmf \
+  -z -Q16F877A -oC:\Users\hp\AppData\Local\Temp\sbm8.2 \
+  --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/SwiftAct_Heater_EventDriven.X.production.map \
+  -E1 -ver=XC8 --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
+  -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
+  -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh \
+  -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0110h-016Fh \
+  -ABANK3=0190h-01EFh -ARAM=020h-06Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh \
+  -AABS1=020h-07Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh -ASFR0=00h-01Fh \
+  -ASFR1=080h-09Fh -ASFR2=0100h-010Fh -ASFR3=0180h-018Fh \
+  -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
+  -pfunctab=ENTRY -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 \
+  -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
+  -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
+  -DENTRY=2 -k C:\Users\hp\AppData\Local\Temp\sbm8.o \
+  dist/default/production\SwiftAct_Heater_EventDriven.X.production.o 
+
+Object code version is 3.11
+
+Machine type is 16F877A
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+C:\Users\hp\AppData\Local\Temp\sbm8.o
+                end_init                             12       12        3        8       0
+                reset_vec                             0        0        3        0       0
+                config                             2007     2007        1     400E       0
+dist/default/production\SwiftAct_Heater_EventDriven.X.production.o
+                cinit                                15       15       1D        8       0
+                functab                              32       32        A       64       0
+                intentry                              4        4        E        8       0
+                text53                              888      888       10     1110       0
+                text52                              9E7      9E7       35     13CE       0
+                text51                              9B7      9B7       30     136E       0
+                text50                              829      829        2     1052       0
+                text49                              150      150      107       78       0
+                text48                              77B      77B       6B       78       0
+                text47                              EC5      EC5       68     1D8A       0
+                text46                              DFC      DFC       62     1BF8       0
+                text45                              86C      86C        D     10D8       0
+                text44                              82B      82B        2     1056       0
+                text43                              850      850        9     10A0       0
+                text42                              859      859        9     10B2       0
+                text41                               3C       3C      114       78       0
+                text40                              82D      82D        2     105A       0
+                text39                              581      581       8B       78       0
+                text38                              862      862        A     10C4       0
+                text37                              C9D      C9D       53     193A       0
+                text36                              831      831        4     1062       0
+                text35                              840      840        8     1080       0
+                text34                              357      357       C7       78       0
+                text33                              257      257      100       78       0
+                text32                              41E      41E       B2       78       0
+                text31                              8B8      8B8       12     1170       0
+                text30                              A5C      A5C       45     14B8       0
+                text29                              AA1      AA1       45     1542       0
+                text28                              F2D      F2D       69     1E5A       0
+                text27                              D44      D44       5B     1A88       0
+                text26                              696      696       77       78       0
+                text25                              8CA      8CA       23     1194       0
+                text24                              70D      70D       6E       78       0
+                text23                              BB7      BB7       47     176E       0
+                text22                              A1C      A1C       40     1438       0
+                text21                              95B      95B       2D     12B6       0
+                text20                              988      988       2F     1310       0
+                text19                              8ED      8ED       24     11DA       0
+                text18                              935      935       26     126A       0
+                text17                              839      839        7     1072       0
+                text16                              7F9      7F9        7       78       0
+                text15                              F96      F96       6A     1F2C       0
+                text14                              CF0      CF0       54     19E0       0
+                text13                              E5E      E5E       67     1CBC       0
+                text12                              BFE      BFE       4E     17FC       0
+                text11                              898      898       10     1130       0
+                text10                              B2B      B2B       46     1656       0
+                text9                               4D0      4D0       B1       78       0
+                text8                               60C      60C       8A       78       0
+                text7                               D9F      D9F       5D     1B3E       0
+                text6                               911      911       24     1222       0
+                text5                               B71      B71       46     16E2       0
+                text4                               82F      82F        2     105E       0
+                text3                               835      835        4     106A       0
+                text2                               8A8      8A8       10     1150       0
+                text1                               AE6      AE6       45     15CC       0
+                maintext                            C4C      C4C       51     1898       0
+                cstackBANK0                          20       20       1D       20       1
+                cstackCOMMON                         70       70        A       70       1
+                clrtext                             848      848        8     1090       0
+                inittext                            7E6      7E6       13       78       0
+                dataBANK0                            50       50        F       20       1
+                bssBANK0                             3D       3D       13       20       1
+                bssCOMMON                            7A       7A        3       70       1
+                idataBANK0                          879      879        F     10F2       0
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   STACK          
+
+        CLASS   CODE           
+                end_init                             12       12        3         0
+                cinit                                15       15       1D         0
+                intentry                              4        4        E         0
+                reset_vec                             0        0        3         0
+                text53                              888      888       10         0
+                text52                              9E7      9E7       35         0
+                text51                              9B7      9B7       30         0
+                text50                              829      829        2         0
+                text49                              150      150      107         0
+                text48                              77B      77B       6B         0
+                text47                              EC5      EC5       68         0
+                text46                              DFC      DFC       62         0
+                text45                              86C      86C        D         0
+                text44                              82B      82B        2         0
+                text43                              850      850        9         0
+                text42                              859      859        9         0
+                text41                               3C       3C      114         0
+                text40                              82D      82D        2         0
+                text39                              581      581       8B         0
+                text38                              862      862        A         0
+                text37                              C9D      C9D       53         0
+                text36                              831      831        4         0
+                text35                              840      840        8         0
+                text34                              357      357       C7         0
+                text33                              257      257      100         0
+                text32                              41E      41E       B2         0
+                text31                              8B8      8B8       12         0
+                text30                              A5C      A5C       45         0
+                text29                              AA1      AA1       45         0
+                text28                              F2D      F2D       69         0
+                text27                              D44      D44       5B         0
+                text26                              696      696       77         0
+                text25                              8CA      8CA       23         0
+                text24                              70D      70D       6E         0
+                text23                              BB7      BB7       47         0
+                text22                              A1C      A1C       40         0
+                text21                              95B      95B       2D         0
+                text20                              988      988       2F         0
+                text19                              8ED      8ED       24         0
+                text18                              935      935       26         0
+                text17                              839      839        7         0
+                text16                              7F9      7F9        7         0
+                text15                              F96      F96       6A         0
+                text14                              CF0      CF0       54         0
+                text13                              E5E      E5E       67         0
+                text12                              BFE      BFE       4E         0
+                text11                              898      898       10         0
+                text10                              B2B      B2B       46         0
+                text9                               4D0      4D0       B1         0
+                text8                               60C      60C       8A         0
+                text7                               D9F      D9F       5D         0
+                text6                               911      911       24         0
+                text5                               B71      B71       46         0
+                text4                               82F      82F        2         0
+                text3                               835      835        4         0
+                text2                               8A8      8A8       10         0
+                text1                               AE6      AE6       45         0
+                maintext                            C4C      C4C       51         0
+                clrtext                             848      848        8         0
+                inittext                            7E6      7E6       13         0
+                idataBANK0                          879      879        F         0
+
+        CLASS   STRCODE        
+
+        CLASS   STRING         
+
+        CLASS   CONST          
+
+        CLASS   ENTRY          
+                functab                              32       32        A         0
+
+        CLASS   COMMON         
+                cstackCOMMON                         70       70        A         1
+                bssCOMMON                            7A       7A        3         1
+
+        CLASS   BANK0          
+                cstackBANK0                          20       20       1D         1
+                dataBANK0                            50       50        F         1
+                bssBANK0                             3D       3D       13         1
+
+        CLASS   BANK1          
+
+        CLASS   BANK2          
+
+        CLASS   BANK3          
+
+        CLASS   RAM            
+
+        CLASS   ABS1           
+                abs_s1                               7E       7E        2         1
+
+        CLASS   SFR0           
+
+        CLASS   SFR1           
+
+        CLASS   SFR2           
+
+        CLASS   SFR3           
+
+        CLASS   CONFIG         
+                config                             2007     2007        1         0
+
+        CLASS   IDLOC          
+
+        CLASS   EEDATA         
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
+
+                reset_vec                      000000  000003  000003         0       0  CODE        2
+                intentry                       000004  00002E  000032         8       0  CODE        2
+                cstackBANK0                    000020  00003F  00005F        20       1  BANK0       1
+                functab                        000032  00000A  00003C        64       0  ENTRY       2
+                cstackCOMMON                   000070  00000D  00007D        70       1  COMMON      1
+                text41                         00003C  0007C4  000800        78       0  CODE        2
+                text50                         000829  000002  00082B      1052       0  CODE        2
+                text44                         00082B  000002  00082D      1056       0  CODE        2
+                text40                         00082D  000002  00082F      105A       0  CODE        2
+                text4                          00082F  000002  000831      105E       0  CODE        2
+                text36                         000831  000004  000835      1062       0  CODE        2
+                text3                          000835  000004  000839      106A       0  CODE        2
+                text17                         000839  000007  000840      1072       0  CODE        2
+                text35                         000840  000008  000848      1080       0  CODE        2
+                clrtext                        000848  000008  000850      1090       0  CODE        2
+                text43                         000850  000009  000859      10A0       0  CODE        2
+                text42                         000859  000009  000862      10B2       0  CODE        2
+                text38                         000862  00000A  00086C      10C4       0  CODE        2
+                text45                         00086C  00000D  000879      10D8       0  CODE        2
+                idataBANK0                     000879  00000F  000888      10F2       0  CODE        2
+                text53                         000888  000010  000898      1110       0  CODE        2
+                text11                         000898  000010  0008A8      1130       0  CODE        2
+                text2                          0008A8  000010  0008B8      1150       0  CODE        2
+                text31                         0008B8  000012  0008CA      1170       0  CODE        2
+                text25                         0008CA  000023  0008ED      1194       0  CODE        2
+                text19                         0008ED  000024  000911      11DA       0  CODE        2
+                text6                          000911  000024  000935      1222       0  CODE        2
+                text18                         000935  000026  00095B      126A       0  CODE        2
+                text21                         00095B  00002D  000988      12B6       0  CODE        2
+                text20                         000988  00002F  0009B7      1310       0  CODE        2
+                text51                         0009B7  000030  0009E7      136E       0  CODE        2
+                text52                         0009E7  000035  000A1C      13CE       0  CODE        2
+                text22                         000A1C  000040  000A5C      1438       0  CODE        2
+                text30                         000A5C  000045  000AA1      14B8       0  CODE        2
+                text29                         000AA1  000045  000AE6      1542       0  CODE        2
+                text1                          000AE6  000045  000B2B      15CC       0  CODE        2
+                text10                         000B2B  000046  000B71      1656       0  CODE        2
+                text5                          000B71  000046  000BB7      16E2       0  CODE        2
+                text23                         000BB7  000047  000BFE      176E       0  CODE        2
+                text12                         000BFE  00004E  000C4C      17FC       0  CODE        2
+                maintext                       000C4C  000051  000C9D      1898       0  CODE        2
+                text37                         000C9D  000053  000CF0      193A       0  CODE        2
+                text14                         000CF0  000054  000D44      19E0       0  CODE        2
+                text27                         000D44  00005B  000D9F      1A88       0  CODE        2
+                text7                          000D9F  00005D  000DFC      1B3E       0  CODE        2
+                text46                         000DFC  000062  000E5E      1BF8       0  CODE        2
+                text13                         000E5E  000067  000EC5      1CBC       0  CODE        2
+                text47                         000EC5  000068  000F2D      1D8A       0  CODE        2
+                text28                         000F2D  000069  000F96      1E5A       0  CODE        2
+                text15                         000F96  00006A  001000      1F2C       0  CODE        2
+                config                         002007  000001  002008      400E       0  CONFIG      2
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            005F-006F             11           1
+        BANK1            00A0-00EF             50           1
+        BANK2            0110-016F             60           1
+        BANK3            0190-01EF             60           1
+        CODE             0003-0003              1           2
+                         0800-0828             29
+                         1000-1FFF            800
+        COMMON           007D-007D              1           1
+        CONST            0003-0003              1           2
+                         0800-0828             29
+                         1000-1FFF            100
+        EEDATA           2100-21FF            100           2
+        ENTRY            0003-0003              1           2
+                         0800-0828             29
+                         1000-1FFF            100
+        IDLOC            2000-2003              4           2
+        RAM              005F-006F             11           1
+                         00A0-00EF             50
+                         0110-016F             60
+                         0190-01EF             60
+        SFR0             0000-001F             20           1
+        SFR1             0080-009F             20           1
+        SFR2             0100-010F             10           1
+        SFR3             0180-018F             10           1
+        STACK            0110-016F             60           1
+        STRCODE          0003-0003              1           2
+                         0800-0828             29
+                         1000-1FFF           1000
+        STRING           0003-0003              1           2
+                         0800-0828             29
+                         1000-1FFF            100
+
+                                  Symbol Table
+
+?_ADC_Read_value                                                           cstackBANK0  0020
+?___awdiv                                                                  cstackBANK0  0020
+?___awmod                                                                  cstackBANK0  0020
+?___lldiv                                                                  cstackBANK0  0020
+?___lwdiv                                                                  cstackBANK0  0020
+ADC_Initialization@a_ADC_Vref_high_t                                       cstackBANK0  0020
+ADC_Initialization@a_ADC_Vref_low_t                                        cstackBANK0  0021
+ADC_Initialization@a_ADC_channel_t                                         cstackBANK0  0024
+ADC_Read_value@retVal                                                      cstackBANK0  0029
+ADC_Select_prescaler@a_ADC_prescaler_t                                     cstackBANK0  0022
+Check_ON_Push_Button@a_u8Pin                                               cstackBANK0  0025
+Check_ON_Push_Button@a_u8Port                                              cstackBANK0  0029
+Check_ON_Push_Button@retVal_t                                              cstackBANK0  0028
+EEPROM_Read_Byte@a_u16Location                                             cstackBANK0  0028
+EEPROM_Read_Byte@u8_retVal                                                 cstackBANK0  002B
+EEPROM_Save_Byte@a_u16Location                                             cstackBANK0  0025
+EEPROM_Save_Byte@a_u8Data                                                  cstackBANK0  0027
+GPIO_ReadFromPin@a_u8pin                                                   cstackBANK0  0020
+GPIO_ReadFromPin@a_u8port                                                  cstackBANK0  0023
+GPIO_ReadFromPin@retVal                                                    cstackBANK0  0024
+GPIO_SetPinDirection@a_u8direction                                         cstackBANK0  0021
+GPIO_SetPinDirection@a_u8pin                                               cstackBANK0  0020
+GPIO_SetPinDirection@a_u8port                                              cstackBANK0  0024
+GPIO_SetPortDirection@a_u8direction                                        cstackBANK0  0020
+GPIO_SetPortDirection@a_u8port                                             cstackBANK0  0023
+GPIO_WriteOnPin@a_u8pin                                                    cstackBANK0  0020
+GPIO_WriteOnPin@a_u8port                                                   cstackBANK0  0024
+GPIO_WriteOnPin@a_u8value                                                  cstackBANK0  0021
+GPIO_WriteOnPort@a_u8port                                                  cstackBANK0  0024
+GPIO_WriteOnPort@a_u8value                                                 cstackBANK0  0020
+Heater_reading_last_ten_temperature_values@g_u8Current_reading_temperature cstackBANK0  0031
+Heater_turn_off@counter                                                    cstackBANK0  002C
+Heater_turn_on@u8Saved_temperature_in_EEPROM                               cstackBANK0  0030
+I2C_Master_Initialization@a_I2C_baud_rate_t                                cstackBANK0  002E
+I2C_Master_Initialization@a_I2C_master_mode_t                              cstackBANK0  0035
+I2C_master_receive_data@a_I2C_ack_status_t                                 cstackBANK0  0021
+I2C_master_receive_data@u8_retVal                                          cstackBANK0  0022
+I2C_master_send_address@a_I2C_Address                                      cstackBANK0  0024
+I2C_master_send_address@a_I2C_operaton_t                                   cstackBANK0  0020
+I2C_master_send_data@a_I2C_Data                                            cstackBANK0  0021
+SevenSegment_Display@F56                                                   dataBANK0    0050
+SevenSegment_Display@a_displayDot                                          cstackBANK0  0029
+SevenSegment_Display@a_u8displayNumber                                     cstackBANK0  0038
+SevenSegment_Display@u8numberRepresentation                                cstackBANK0  002E
+SevenSegment_SelectChip@a_Chip1                                            cstackBANK0  002A
+SevenSegment_SelectChip@a_Chip2                                            cstackBANK0  0026
+SevenSegment_SelectChip@a_Chip3                                            cstackBANK0  0027
+SevenSegment_SelectChip@a_Chip4                                            cstackBANK0  0028
+Timer1_set_callback_function@a_function_ptr                                cstackBANK0  0021
+Timer1_write_counter@a_u16init_value_for_timer                             cstackBANK0  0020
+_ADC_Initialization                                                        text49       0150
+_ADC_Read_value                                                            text12       0BFE
+_ADC_Select_prescaler                                                      text48       077B
+_ADC_Start_conversion                                                      text11       0898
+_CPU_sleep                                                                 text50       0829
+_Check_ON_Push_Button                                                      text23       0BB7
+_EEPROM_Initialization                                                     text45       086C
+_EEPROM_Read_Byte                                                          text5        0B71
+_EEPROM_Save_Byte                                                          text18       0935
+_External_interrupt_enable                                                 text44       082B
+_External_interrupt_select_falling_edge                                    text43       0850
+_GPIO_Enable_Pull_Up_On_PortB                                              text42       0859
+_GPIO_ReadFromPin                                                          text24       070D
+_GPIO_SetPinDirection                                                      text41       003C
+_GPIO_SetPortDirection                                                     text39       0581
+_GPIO_WriteOnPin                                                           text33       0257
+_GPIO_WriteOnPort                                                          text30       0A5C
+_Global_interrupt_enable                                                   text40       082D
+_Heater_Initialization                                                     text34       0357
+_Heater_blank_temperature                                                  text25       08CA
+_Heater_change_temperature                                                 text14       0CF0
+_Heater_check_if_change_state_to_setup_or_off                              text13       0E5E
+_Heater_display_off_temperature                                            text31       08B8
+_Heater_display_on_temperature                                             text26       0696
+_Heater_heating_cooling_process                                            text9        04D0
+_Heater_reading_last_ten_temperature_values                                text8        060C
+_Heater_reading_last_ten_temperature_values$532                            cstackBANK0  002F
+_Heater_turn_off                                                           text15       0F96
+_Heater_turn_on                                                            text1        0AE6
+_Heater_turn_on$521                                                        cstackBANK0  002E
+_I2C_Master_Initialization                                                 text46       0DFC
+_I2C_master_receive_data                                                   text7        0D9F
+_I2C_master_send_address                                                   text22       0A1C
+_I2C_master_send_data                                                      text21       095B
+_I2C_master_send_repeated_start_condition                                  text6        0911
+_I2C_master_send_start_condition                                           text20       0988
+_I2C_master_send_stop_condition                                            text19       08ED
+_ISR                                                                       text51       09B7
+_Peripherals_interrupt_disable                                             text17       0839
+_Peripherals_interrupt_enable                                              text4        082F
+_SevenSegment_Display                                                      text29       0AA1
+_SevenSegment_Initialization                                               text38       0862
+_SevenSegment_SelectChip                                                   text32       041E
+_TIMER1_ISR                                                                text52       09E7
+_Timer1_Initialization                                                     text37       0C9D
+_Timer1_config_t                                                           dataBANK0    005A
+_Timer1_disable                                                            text16       07F9
+_Timer1_enable                                                             text3        0835
+_Timer1_enable_overflow_interrupt                                          text36       0831
+_Timer1_set_callback_function                                              text35       0840
+_Timer1_write_counter                                                      text2        08A8
+__CFG_BOREN$ON                                                             (abs)        0000
+__CFG_CP$OFF                                                               (abs)        0000
+__CFG_CPD$OFF                                                              (abs)        0000
+__CFG_FOSC$XT                                                              (abs)        0000
+__CFG_LVP$OFF                                                              (abs)        0000
+__CFG_PWRTE$ON                                                             (abs)        0000
+__CFG_WDTE$OFF                                                             (abs)        0000
+__CFG_WRT$OFF                                                              (abs)        0000
+__Habs1                                                                    abs1         0000
+__Hbank0                                                                   bank0        0000
+__Hbank1                                                                   bank1        0000
+__Hbank2                                                                   bank2        0000
+__Hbank3                                                                   bank3        0000
+__HbssBANK0                                                                bssBANK0     0000
+__HbssCOMMON                                                               bssCOMMON    0000
+__Hcinit                                                                   cinit        0032
+__Hclrtext                                                                 clrtext      0000
+__Hcode                                                                    code         0000
+__Hcommon                                                                  common       0000
+__Hconfig                                                                  config       2008
+__HcstackBANK0                                                             cstackBANK0  0000
+__HcstackCOMMON                                                            cstackCOMMON 0000
+__HdataBANK0                                                               dataBANK0    0000
+__Heeprom_data                                                             eeprom_data  0000
+__Hend_init                                                                end_init     0015
+__Hfunctab                                                                 functab      003C
+__HidataBANK0                                                              idataBANK0   0000
+__Hidloc                                                                   idloc        0000
+__Hinit                                                                    init         0012
+__Hinittext                                                                inittext     0000
+__Hintentry                                                                intentry     0012
+__Hmaintext                                                                maintext     0000
+__Hpowerup                                                                 powerup      0000
+__Hram                                                                     ram          0000
+__Hreset_vec                                                               reset_vec    0003
+__Hsfr0                                                                    sfr0         0000
+__Hsfr1                                                                    sfr1         0000
+__Hsfr2                                                                    sfr2         0000
+__Hsfr3                                                                    sfr3         0000
+__Hspace_0                                                                 (abs)        2008
+__Hspace_1                                                                 (abs)        007D
+__Hspace_2                                                                 (abs)        0000
+__Hspace_3                                                                 (abs)        0000
+__Hstack                                                                   stack        0000
+__Hstrings                                                                 strings      0000
+__Htext                                                                    text         0000
+__Labs1                                                                    abs1         0000
+__Lbank0                                                                   bank0        0000
+__Lbank1                                                                   bank1        0000
+__Lbank2                                                                   bank2        0000
+__Lbank3                                                                   bank3        0000
+__LbssBANK0                                                                bssBANK0     0000
+__LbssCOMMON                                                               bssCOMMON    0000
+__Lcinit                                                                   cinit        0015
+__Lclrtext                                                                 clrtext      0000
+__Lcode                                                                    code         0000
+__Lcommon                                                                  common       0000
+__Lconfig                                                                  config       2007
+__LcstackBANK0                                                             cstackBANK0  0000
+__LcstackCOMMON                                                            cstackCOMMON 0000
+__LdataBANK0                                                               dataBANK0    0000
+__Leeprom_data                                                             eeprom_data  0000
+__Lend_init                                                                end_init     0012
+__Lfunctab                                                                 functab      0032
+__LidataBANK0                                                              idataBANK0   0000
+__Lidloc                                                                   idloc        0000
+__Linit                                                                    init         0012
+__Linittext                                                                inittext     0000
+__Lintentry                                                                intentry     0004
+__Lmaintext                                                                maintext     0000
+__Lpowerup                                                                 powerup      0000
+__Lram                                                                     ram          0000
+__Lreset_vec                                                               reset_vec    0000
+__Lsfr0                                                                    sfr0         0000
+__Lsfr1                                                                    sfr1         0000
+__Lsfr2                                                                    sfr2         0000
+__Lsfr3                                                                    sfr3         0000
+__Lspace_0                                                                 (abs)        0000
+__Lspace_1                                                                 (abs)        0000
+__Lspace_2                                                                 (abs)        0000
+__Lspace_3                                                                 (abs)        0000
+__Lstack                                                                   stack        0000
+__Lstrings                                                                 strings      0000
+__Ltext                                                                    text         0000
+__S0                                                                       (abs)        2008
+__S1                                                                       (abs)        007D
+__S2                                                                       (abs)        0000
+__S3                                                                       (abs)        0000
+___awdiv                                                                   text28       0F2D
+___awdiv@counter                                                           cstackBANK0  0025
+___awdiv@dividend                                                          cstackBANK0  0022
+___awdiv@divisor                                                           cstackBANK0  0020
+___awdiv@quotient                                                          cstackBANK0  0027
+___awdiv@sign                                                              cstackBANK0  0026
+___awmod                                                                   text27       0D44
+___awmod@counter                                                           cstackBANK0  0025
+___awmod@dividend                                                          cstackBANK0  0022
+___awmod@divisor                                                           cstackBANK0  0020
+___awmod@sign                                                              cstackBANK0  0026
+___int_sp                                                                  stack        0000
+___latbits                                                                 (abs)        0002
+___lldiv                                                                   text47       0EC5
+___lldiv@counter                                                           cstackBANK0  002D
+___lldiv@dividend                                                          cstackBANK0  0024
+___lldiv@divisor                                                           cstackBANK0  0020
+___lldiv@quotient                                                          cstackBANK0  0029
+___lwdiv                                                                   text10       0B2B
+___lwdiv@counter                                                           cstackBANK0  0027
+___lwdiv@dividend                                                          cstackBANK0  0022
+___lwdiv@divisor                                                           cstackBANK0  0020
+___lwdiv@quotient                                                          cstackBANK0  0025
+___sp                                                                      stack        0000
+___stackhi                                                                 (abs)        0000
+___stacklo                                                                 (abs)        0000
+__end_of_ADC_Initialization                                                text49       0257
+__end_of_ADC_Read_value                                                    text12       0C4C
+__end_of_ADC_Select_prescaler                                              text48       07E6
+__end_of_ADC_Start_conversion                                              text11       08A8
+__end_of_CPU_sleep                                                         text50       082B
+__end_of_Check_ON_Push_Button                                              text23       0BFE
+__end_of_EEPROM_Initialization                                             text45       0879
+__end_of_EEPROM_Read_Byte                                                  text5        0BB7
+__end_of_EEPROM_Save_Byte                                                  text18       095B
+__end_of_External_interrupt_enable                                         text44       082D
+__end_of_External_interrupt_select_falling_edge                            text43       0859
+__end_of_GPIO_Enable_Pull_Up_On_PortB                                      text42       0862
+__end_of_GPIO_ReadFromPin                                                  text24       077B
+__end_of_GPIO_SetPinDirection                                              text41       0150
+__end_of_GPIO_SetPortDirection                                             text39       060C
+__end_of_GPIO_WriteOnPin                                                   text33       0357
+__end_of_GPIO_WriteOnPort                                                  text30       0AA1
+__end_of_Global_interrupt_enable                                           text40       082F
+__end_of_Heater_Initialization                                             text34       041E
+__end_of_Heater_blank_temperature                                          text25       08ED
+__end_of_Heater_change_temperature                                         text14       0D44
+__end_of_Heater_check_if_change_state_to_setup_or_off                      text13       0EC5
+__end_of_Heater_display_off_temperature                                    text31       08CA
+__end_of_Heater_display_on_temperature                                     text26       070D
+__end_of_Heater_heating_cooling_process                                    text9        0581
+__end_of_Heater_reading_last_ten_temperature_values                        text8        0696
+__end_of_Heater_turn_off                                                   text15       1000
+__end_of_Heater_turn_on                                                    text1        0B2B
+__end_of_I2C_Master_Initialization                                         text46       0E5E
+__end_of_I2C_master_receive_data                                           text7        0DFC
+__end_of_I2C_master_send_address                                           text22       0A5C
+__end_of_I2C_master_send_data                                              text21       0988
+__end_of_I2C_master_send_repeated_start_condition                          text6        0935
+__end_of_I2C_master_send_start_condition                                   text20       09B7
+__end_of_I2C_master_send_stop_condition                                    text19       0911
+__end_of_ISR                                                               text51       09E7
+__end_of_Peripherals_interrupt_disable                                     text17       0840
+__end_of_Peripherals_interrupt_enable                                      text4        0831
+__end_of_SevenSegment_Display                                              text29       0AE6
+__end_of_SevenSegment_Initialization                                       text38       086C
+__end_of_SevenSegment_SelectChip                                           text32       04D0
+__end_of_TIMER1_ISR                                                        text52       0A1C
+__end_of_Timer1_Initialization                                             text37       0CF0
+__end_of_Timer1_disable                                                    text16       0800
+__end_of_Timer1_enable                                                     text3        0839
+__end_of_Timer1_enable_overflow_interrupt                                  text36       0835
+__end_of_Timer1_set_callback_function                                      text35       0848
+__end_of_Timer1_write_counter                                              text2        08B8
+__end_of___awdiv                                                           text28       0F96
+__end_of___awmod                                                           text27       0D9F
+__end_of___lldiv                                                           text47       0F2D
+__end_of___lwdiv                                                           text10       0B71
+__end_of__i1fptable                                                        functab      003C
+__end_of__initialization                                                   cinit        002E
+__end_of_main                                                              maintext     0C9D
+__end_ofi1_Timer1_write_counter                                            text53       0898
+__i1fptable                                                                functab      0033
+__initialization                                                           cinit        0015
+__pbssBANK0                                                                bssBANK0     003D
+__pbssCOMMON                                                               bssCOMMON    007A
+__pcstackBANK0                                                             cstackBANK0  0020
+__pcstackCOMMON                                                            cstackCOMMON 0070
+__pdataBANK0                                                               dataBANK0    0050
+__pfunctab                                                                 functab      0032
+__pidataBANK0                                                              idataBANK0   0879
+__pintentry                                                                intentry     0004
+__pmaintext                                                                maintext     0C4C
+__ptext1                                                                   text1        0AE6
+__ptext10                                                                  text10       0B2B
+__ptext11                                                                  text11       0898
+__ptext12                                                                  text12       0BFE
+__ptext13                                                                  text13       0E5E
+__ptext14                                                                  text14       0CF0
+__ptext15                                                                  text15       0F96
+__ptext16                                                                  text16       07F9
+__ptext17                                                                  text17       0839
+__ptext18                                                                  text18       0935
+__ptext19                                                                  text19       08ED
+__ptext2                                                                   text2        08A8
+__ptext20                                                                  text20       0988
+__ptext21                                                                  text21       095B
+__ptext22                                                                  text22       0A1C
+__ptext23                                                                  text23       0BB7
+__ptext24                                                                  text24       070D
+__ptext25                                                                  text25       08CA
+__ptext26                                                                  text26       0696
+__ptext27                                                                  text27       0D44
+__ptext28                                                                  text28       0F2D
+__ptext29                                                                  text29       0AA1
+__ptext3                                                                   text3        0835
+__ptext30                                                                  text30       0A5C
+__ptext31                                                                  text31       08B8
+__ptext32                                                                  text32       041E
+__ptext33                                                                  text33       0257
+__ptext34                                                                  text34       0357
+__ptext35                                                                  text35       0840
+__ptext36                                                                  text36       0831
+__ptext37                                                                  text37       0C9D
+__ptext38                                                                  text38       0862
+__ptext39                                                                  text39       0581
+__ptext4                                                                   text4        082F
+__ptext40                                                                  text40       082D
+__ptext41                                                                  text41       003C
+__ptext42                                                                  text42       0859
+__ptext43                                                                  text43       0850
+__ptext44                                                                  text44       082B
+__ptext45                                                                  text45       086C
+__ptext46                                                                  text46       0DFC
+__ptext47                                                                  text47       0EC5
+__ptext48                                                                  text48       077B
+__ptext49                                                                  text49       0150
+__ptext5                                                                   text5        0B71
+__ptext50                                                                  text50       0829
+__ptext51                                                                  text51       09B7
+__ptext52                                                                  text52       09E7
+__ptext53                                                                  text53       0888
+__ptext6                                                                   text6        0911
+__ptext7                                                                   text7        0D9F
+__ptext8                                                                   text8        060C
+__ptext9                                                                   text9        04D0
+__size_of_ADC_Initialization                                               (abs)        0000
+__size_of_ADC_Read_value                                                   (abs)        0000
+__size_of_ADC_Select_prescaler                                             (abs)        0000
+__size_of_ADC_Start_conversion                                             (abs)        0000
+__size_of_CPU_sleep                                                        (abs)        0000
+__size_of_Check_ON_Push_Button                                             (abs)        0000
+__size_of_EEPROM_Initialization                                            (abs)        0000
+__size_of_EEPROM_Read_Byte                                                 (abs)        0000
+__size_of_EEPROM_Save_Byte                                                 (abs)        0000
+__size_of_External_interrupt_enable                                        (abs)        0000
+__size_of_External_interrupt_select_falling_edge                           (abs)        0000
+__size_of_GPIO_Enable_Pull_Up_On_PortB                                     (abs)        0000
+__size_of_GPIO_ReadFromPin                                                 (abs)        0000
+__size_of_GPIO_SetPinDirection                                             (abs)        0000
+__size_of_GPIO_SetPortDirection                                            (abs)        0000
+__size_of_GPIO_WriteOnPin                                                  (abs)        0000
+__size_of_GPIO_WriteOnPort                                                 (abs)        0000
+__size_of_Global_interrupt_enable                                          (abs)        0000
+__size_of_Heater_Initialization                                            (abs)        0000
+__size_of_Heater_blank_temperature                                         (abs)        0000
+__size_of_Heater_change_temperature                                        (abs)        0000
+__size_of_Heater_check_if_change_state_to_setup_or_off                     (abs)        0000
+__size_of_Heater_display_off_temperature                                   (abs)        0000
+__size_of_Heater_display_on_temperature                                    (abs)        0000
+__size_of_Heater_heating_cooling_process                                   (abs)        0000
+__size_of_Heater_reading_last_ten_temperature_values                       (abs)        0000
+__size_of_Heater_turn_off                                                  (abs)        0000
+__size_of_Heater_turn_on                                                   (abs)        0000
+__size_of_I2C_Master_Initialization                                        (abs)        0000
+__size_of_I2C_master_receive_data                                          (abs)        0000
+__size_of_I2C_master_send_address                                          (abs)        0000
+__size_of_I2C_master_send_data                                             (abs)        0000
+__size_of_I2C_master_send_repeated_start_condition                         (abs)        0000
+__size_of_I2C_master_send_start_condition                                  (abs)        0000
+__size_of_I2C_master_send_stop_condition                                   (abs)        0000
+__size_of_ISR                                                              (abs)        0000
+__size_of_Peripherals_interrupt_disable                                    (abs)        0000
+__size_of_Peripherals_interrupt_enable                                     (abs)        0000
+__size_of_SevenSegment_Display                                             (abs)        0000
+__size_of_SevenSegment_Initialization                                      (abs)        0000
+__size_of_SevenSegment_SelectChip                                          (abs)        0000
+__size_of_TIMER1_ISR                                                       (abs)        0000
+__size_of_Timer1_Initialization                                            (abs)        0000
+__size_of_Timer1_disable                                                   (abs)        0000
+__size_of_Timer1_enable                                                    (abs)        0000
+__size_of_Timer1_enable_overflow_interrupt                                 (abs)        0000
+__size_of_Timer1_set_callback_function                                     (abs)        0000
+__size_of_Timer1_write_counter                                             (abs)        0000
+__size_of___awdiv                                                          (abs)        0000
+__size_of___awmod                                                          (abs)        0000
+__size_of___lldiv                                                          (abs)        0000
+__size_of___lwdiv                                                          (abs)        0000
+__size_of__i1fptable                                                       (abs)        0000
+__size_of_main                                                             (abs)        0000
+__size_ofi1_Timer1_write_counter                                           (abs)        0000
+_external_interrupt_callback_ptr                                           bssCOMMON    007B
+_g_Heater_state_t                                                          bssBANK0     004F
+_g_u16Sum_of_ten_readings                                                  bssBANK0     0047
+_g_u8Display_blank_counter                                                 bssBANK0     004A
+_g_u8End_setup_state                                                       bssCOMMON    007A
+_g_u8Heater_real_time_temperature                                          dataBANK0    005D
+_g_u8Heater_wanted_temperature                                             dataBANK0    005E
+_g_u8Led_blank_counter                                                     bssBANK0     0049
+_g_u8Reading_arr                                                           bssBANK0     003D
+_g_u8Reading_counter                                                       bssBANK0     004C
+_g_u8Reading_deleted_element                                               bssBANK0     004B
+_g_u8Sync_flag                                                             bssBANK0     004E
+_g_u8calculate_temperature_flag                                            bssBANK0     004D
+_main                                                                      maintext     0C4C
+_timer1_callback_ptr                                                       bssCOMMON    007C
+btemp                                                                      (abs)        007E
+clear_ram0                                                                 clrtext      0848
+end_of_initialization                                                      cinit        002E
+fpbase                                                                     (abs)        0000
+fptable                                                                    functab      0032
+fptotal                                                                    (abs)        0000
+i1Timer1_write_counter@a_u16init_value_for_timer                           cstackCOMMON 0070
+i1_Timer1_write_counter                                                    text53       0888
+i1fpbase                                                                   functab      0038
+i1fptable                                                                  functab      0033
+i1fptotal                                                                  (abs)        0002
+init_fetch0                                                                inittext     07E6
+init_ram0                                                                  inittext     07EA
+interrupt_function                                                         intentry     0004
+intlevel0                                                                  functab      0032
+intlevel1                                                                  functab      0032
+intlevel2                                                                  functab      0032
+intlevel3                                                                  functab      0032
+intlevel4                                                                  functab      0032
+intlevel5                                                                  functab      0032
+reset_vec                                                                  reset_vec    0000
+saved_w                                                                    (abs)        007E
+start                                                                      init         0012
+start_initialization                                                       cinit        0015
+wtemp0                                                                     (abs)        007E
+
+
+FUNCTION INFORMATION:
+
+ *************** function _main *****************
+ Defined at:
+		line 19 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       2       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels required when called:    7
+ This function calls:
+		_CPU_sleep
+		_Check_ON_Push_Button
+		_Heater_Initialization
+		_Heater_blank_temperature
+		_Heater_change_temperature
+		_Heater_check_if_change_state_to_setup_or_off
+		_Heater_display_on_temperature
+		_Heater_reading_last_ten_temperature_values
+		_Heater_turn_on
+ This function is called by:
+		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _Heater_turn_on *****************
+ Defined at:
+		line 331 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  u8Saved_temp    1   16[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       3       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       5       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_EEPROM_Read_Byte
+		_Peripherals_interrupt_enable
+		_Timer1_enable
+		_Timer1_write_counter
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _Timer1_write_counter *****************
+ Defined at:
+		line 238 in file "timers.c"
+ Parameters:    Size  Location     Type
+  a_u16init_va    2    0[BANK0 ] unsigned short 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       2       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       3       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_turn_on
+ This function uses a non-reentrant model
+
+
+ *************** function _Timer1_enable *****************
+ Defined at:
+		line 180 in file "timers.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_turn_on
+ This function uses a non-reentrant model
+
+
+ *************** function _Peripherals_interrupt_enable *****************
+ Defined at:
+		line 950 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_turn_on
+ This function uses a non-reentrant model
+
+
+ *************** function _EEPROM_Read_Byte *****************
+ Defined at:
+		line 79 in file "EEPROM24c04.c"
+ Parameters:    Size  Location     Type
+  a_u16Locatio    2    8[BANK0 ] unsigned short 
+ Auto vars:     Size  Location     Type
+  u8_retVal       1   11[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       2       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       4       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_EEPROM_Save_Byte
+		_I2C_master_receive_data
+		_I2C_master_send_address
+		_I2C_master_send_data
+		_I2C_master_send_repeated_start_condition
+		_I2C_master_send_start_condition
+		_I2C_master_send_stop_condition
+ This function is called by:
+		_Heater_turn_on
+ This function uses a non-reentrant model
+
+
+ *************** function _I2C_master_send_repeated_start_condition *****************
+ Defined at:
+		line 143 in file "I2C.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_EEPROM_Read_Byte
+		_EEPROM_Read_Array
+ This function uses a non-reentrant model
+
+
+ *************** function _I2C_master_receive_data *****************
+ Defined at:
+		line 244 in file "I2C.c"
+ Parameters:    Size  Location     Type
+  a_I2C_ack_st    1    wreg     enum E23
+ Auto vars:     Size  Location     Type
+  a_I2C_ack_st    1    1[BANK0 ] enum E23
+  u8_retVal       1    2[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       3       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_EEPROM_Read_Byte
+		_EEPROM_Read_Array
+ This function uses a non-reentrant model
+
+
+ *************** function _Heater_reading_last_ten_temperature_values *****************
+ Defined at:
+		line 474 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  g_u8Current_    1   17[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       3       0       0       0
+      Temps:          0       4       0       0       0
+      Totals:         0       7       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_ADC_Read_value
+		_ADC_Start_conversion
+		_Heater_heating_cooling_process
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _Heater_heating_cooling_process *****************
+ Defined at:
+		line 186 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_GPIO_WriteOnPin
+		___lwdiv
+ This function is called by:
+		_Heater_reading_last_ten_temperature_values
+ This function uses a non-reentrant model
+
+
+ *************** function ___lwdiv *****************
+ Defined at:
+		line 5 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c"
+ Parameters:    Size  Location     Type
+  divisor         2    0[BANK0 ] unsigned int 
+  dividend        2    2[BANK0 ] unsigned int 
+ Auto vars:     Size  Location     Type
+  quotient        2    5[BANK0 ] unsigned int 
+  counter         1    7[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  2    0[BANK0 ] unsigned int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       4       0       0       0
+      Locals:         0       3       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       8       0       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_heating_cooling_process
+ This function uses a non-reentrant model
+
+
+ *************** function _ADC_Start_conversion *****************
+ Defined at:
+		line 267 in file "ADC.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_reading_last_ten_temperature_values
+ This function uses a non-reentrant model
+
+
+ *************** function _ADC_Read_value *****************
+ Defined at:
+		line 237 in file "ADC.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  retVal          2    9[BANK0 ] unsigned short 
+ Return value:  Size  Location     Type
+                  2    0[BANK0 ] unsigned short 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       2       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       7       0       0       0
+      Totals:         0      11       0       0       0
+Total ram usage:       11 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_reading_last_ten_temperature_values
+ This function uses a non-reentrant model
+
+
+ *************** function _Heater_check_if_change_state_to_setup_or_off *****************
+ Defined at:
+		line 541 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_Check_ON_Push_Button
+		_GPIO_WriteOnPin
+		_Heater_turn_off
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _Heater_change_temperature *****************
+ Defined at:
+		line 408 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_Check_ON_Push_Button
+		_Heater_turn_off
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _Heater_turn_off *****************
+ Defined at:
+		line 84 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  counter         1   12[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       2       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_EEPROM_Save_Byte
+		_GPIO_WriteOnPin
+		_Peripherals_interrupt_disable
+		_SevenSegment_SelectChip
+		_Timer1_disable
+ This function is called by:
+		_Heater_change_temperature
+		_Heater_check_if_change_state_to_setup_or_off
+ This function uses a non-reentrant model
+
+
+ *************** function _Timer1_disable *****************
+ Defined at:
+		line 196 in file "timers.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_turn_off
+ This function uses a non-reentrant model
+
+
+ *************** function _Peripherals_interrupt_disable *****************
+ Defined at:
+		line 967 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_turn_off
+ This function uses a non-reentrant model
+
+
+ *************** function _EEPROM_Save_Byte *****************
+ Defined at:
+		line 54 in file "EEPROM24c04.c"
+ Parameters:    Size  Location     Type
+  a_u16Locatio    2    5[BANK0 ] unsigned short 
+  a_u8Data        1    7[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       3       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       3       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_I2C_master_send_address
+		_I2C_master_send_data
+		_I2C_master_send_start_condition
+		_I2C_master_send_stop_condition
+ This function is called by:
+		_EEPROM_Read_Byte
+		_Heater_turn_off
+		_EEPROM_Read_Array
+ This function uses a non-reentrant model
+
+
+ *************** function _I2C_master_send_stop_condition *****************
+ Defined at:
+		line 114 in file "I2C.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_EEPROM_Save_Byte
+		_EEPROM_Read_Byte
+		_EEPROM_Save_Array
+		_EEPROM_Read_Array
+		_EEPROM_Save_Page
+		_EEPROM_Erase
+ This function uses a non-reentrant model
+
+
+ *************** function _I2C_master_send_start_condition *****************
+ Defined at:
+		line 82 in file "I2C.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_EEPROM_Save_Byte
+		_EEPROM_Read_Byte
+		_EEPROM_Save_Array
+		_EEPROM_Read_Array
+		_EEPROM_Save_Page
+		_EEPROM_Erase
+ This function uses a non-reentrant model
+
+
+ *************** function _I2C_master_send_data *****************
+ Defined at:
+		line 215 in file "I2C.c"
+ Parameters:    Size  Location     Type
+  a_I2C_Data      1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  a_I2C_Data      1    1[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      enum E45
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       2       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_EEPROM_Save_Byte
+		_EEPROM_Read_Byte
+		_EEPROM_Save_Array
+		_EEPROM_Read_Array
+		_EEPROM_Save_Page
+		_EEPROM_Erase
+ This function uses a non-reentrant model
+
+
+ *************** function _I2C_master_send_address *****************
+ Defined at:
+		line 172 in file "I2C.c"
+ Parameters:    Size  Location     Type
+  a_I2C_Addres    1    wreg     unsigned char 
+  a_I2C_operat    1    0[BANK0 ] enum E19
+ Auto vars:     Size  Location     Type
+  a_I2C_Addres    1    4[BANK0 ] unsigned char 
+  retVal_t        1    0        enum E27
+ Return value:  Size  Location     Type
+                  1    wreg      enum E45
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       1       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       5       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_EEPROM_Save_Byte
+		_EEPROM_Read_Byte
+		_EEPROM_Save_Array
+		_EEPROM_Read_Array
+		_EEPROM_Save_Page
+		_EEPROM_Erase
+ This function uses a non-reentrant model
+
+
+ *************** function _Check_ON_Push_Button *****************
+ Defined at:
+		line 613 in file "heater.c"
+ Parameters:    Size  Location     Type
+  a_u8Port        1    wreg     unsigned char 
+  a_u8Pin         1    5[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  a_u8Port        1    9[BANK0 ] unsigned char 
+  retVal_t        1    8[BANK0 ] enum E1018
+ Return value:  Size  Location     Type
+                  1    wreg      enum E50
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       1       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       5       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_GPIO_ReadFromPin
+ This function is called by:
+		_main
+		_Heater_change_temperature
+		_Heater_check_if_change_state_to_setup_or_off
+ This function uses a non-reentrant model
+
+
+ *************** function _GPIO_ReadFromPin *****************
+ Defined at:
+		line 510 in file "GPIO.c"
+ Parameters:    Size  Location     Type
+  a_u8port        1    wreg     unsigned char 
+  a_u8pin         1    0[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  a_u8port        1    3[BANK0 ] unsigned char 
+  retVal          1    4[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       1       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       5       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Check_ON_Push_Button
+ This function uses a non-reentrant model
+
+
+ *************** function _Heater_blank_temperature *****************
+ Defined at:
+		line 580 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_Heater_display_off_temperature
+		_Heater_display_on_temperature
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _Heater_display_on_temperature *****************
+ Defined at:
+		line 360 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       2       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_SevenSegment_Display
+		_SevenSegment_SelectChip
+		___awdiv
+		___awmod
+ This function is called by:
+		_main
+		_Heater_blank_temperature
+ This function uses a non-reentrant model
+
+
+ *************** function ___awmod *****************
+ Defined at:
+		line 5 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c"
+ Parameters:    Size  Location     Type
+  divisor         2    0[BANK0 ] int 
+  dividend        2    2[BANK0 ] int 
+ Auto vars:     Size  Location     Type
+  sign            1    6[BANK0 ] unsigned char 
+  counter         1    5[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  2    0[BANK0 ] int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       4       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       7       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_display_on_temperature
+ This function uses a non-reentrant model
+
+
+ *************** function ___awdiv *****************
+ Defined at:
+		line 5 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c"
+ Parameters:    Size  Location     Type
+  divisor         2    0[BANK0 ] int 
+  dividend        2    2[BANK0 ] int 
+ Auto vars:     Size  Location     Type
+  quotient        2    7[BANK0 ] int 
+  sign            1    6[BANK0 ] unsigned char 
+  counter         1    5[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  2    0[BANK0 ] int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       4       0       0       0
+      Locals:         0       4       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       9       0       0       0
+Total ram usage:        9 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_display_on_temperature
+ This function uses a non-reentrant model
+
+
+ *************** function _SevenSegment_Display *****************
+ Defined at:
+		line 51 in file "SevenSegment.c"
+ Parameters:    Size  Location     Type
+  a_u8displayN    1    wreg     unsigned char 
+  a_displayDot    1    9[BANK0 ] enum E10
+ Auto vars:     Size  Location     Type
+  a_u8displayN    1   24[BANK0 ] unsigned char 
+  u8numberRepr   10   14[BANK0 ] unsigned char [10]
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       1       0       0       0
+      Locals:         0      11       0       0       0
+      Temps:          0       4       0       0       0
+      Totals:         0      16       0       0       0
+Total ram usage:       16 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_GPIO_WriteOnPin
+		_GPIO_WriteOnPort
+ This function is called by:
+		_Heater_display_on_temperature
+ This function uses a non-reentrant model
+
+
+ *************** function _GPIO_WriteOnPort *****************
+ Defined at:
+		line 463 in file "GPIO.c"
+ Parameters:    Size  Location     Type
+  a_u8port        1    wreg     unsigned char 
+  a_u8value       1    0[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  a_u8port        1    4[BANK0 ] unsigned char 
+  retVal          1    0        enum E10
+ Return value:  Size  Location     Type
+                  1    wreg      enum E10
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       1       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       5       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_SevenSegment_Display
+ This function uses a non-reentrant model
+
+
+ *************** function _Heater_display_off_temperature *****************
+ Defined at:
+		line 252 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_SevenSegment_SelectChip
+ This function is called by:
+		_Heater_blank_temperature
+ This function uses a non-reentrant model
+
+
+ *************** function _SevenSegment_SelectChip *****************
+ Defined at:
+		line 37 in file "SevenSegment_unportablePart.c"
+ Parameters:    Size  Location     Type
+  a_Chip1         1    wreg     enum E2
+  a_Chip2         1    6[BANK0 ] enum E2
+  a_Chip3         1    7[BANK0 ] enum E2
+  a_Chip4         1    8[BANK0 ] enum E2
+ Auto vars:     Size  Location     Type
+  a_Chip1         1   10[BANK0 ] enum E2
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       3       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       5       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_GPIO_SetPinDirection
+		_GPIO_WriteOnPin
+ This function is called by:
+		_Heater_turn_off
+		_Heater_display_off_temperature
+		_Heater_display_on_temperature
+ This function uses a non-reentrant model
+
+
+ *************** function _GPIO_WriteOnPin *****************
+ Defined at:
+		line 306 in file "GPIO.c"
+ Parameters:    Size  Location     Type
+  a_u8port        1    wreg     unsigned char 
+  a_u8pin         1    0[BANK0 ] unsigned char 
+  a_u8value       1    1[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  a_u8port        1    4[BANK0 ] unsigned char 
+  retVal          1    0        enum E10
+ Return value:  Size  Location     Type
+                  1    wreg      enum E10
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       2       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       6       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_SevenSegment_Display
+		_SevenSegment_SelectChip
+		_Heater_turn_off
+		_Heater_heating_cooling_process
+		_Heater_check_if_change_state_to_setup_or_off
+ This function uses a non-reentrant model
+
+
+ *************** function _Heater_Initialization *****************
+ Defined at:
+		line 276 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		_ADC_Initialization
+		_ADC_Select_prescaler
+		_EEPROM_Initialization
+		_External_interrupt_enable
+		_External_interrupt_select_falling_edge
+		_GPIO_Enable_Pull_Up_On_PortB
+		_GPIO_SetPinDirection
+		_Global_interrupt_enable
+		_SevenSegment_Initialization
+		_Timer1_Initialization
+		_Timer1_enable_overflow_interrupt
+		_Timer1_set_callback_function
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _Timer1_set_callback_function *****************
+ Defined at:
+		line 129 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+  a_function_p    1    wreg     PTR FTN()void 
+		 -> TIMER1_ISR(1), 
+ Auto vars:     Size  Location     Type
+  a_function_p    1    1[BANK0 ] PTR FTN()void 
+		 -> TIMER1_ISR(1), 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       2       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _Timer1_enable_overflow_interrupt *****************
+ Defined at:
+		line 97 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _Timer1_Initialization *****************
+ Defined at:
+		line 123 in file "timers.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       2       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _SevenSegment_Initialization *****************
+ Defined at:
+		line 34 in file "SevenSegment.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_GPIO_SetPortDirection
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _GPIO_SetPortDirection *****************
+ Defined at:
+		line 193 in file "GPIO.c"
+ Parameters:    Size  Location     Type
+  a_u8port        1    wreg     unsigned char 
+  a_u8directio    1    0[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  a_u8port        1    3[BANK0 ] unsigned char 
+  retVal          1    0        enum E10
+ Return value:  Size  Location     Type
+                  1    wreg      enum E10
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       1       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       5       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_SevenSegment_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _Global_interrupt_enable *****************
+ Defined at:
+		line 916 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _GPIO_SetPinDirection *****************
+ Defined at:
+		line 36 in file "GPIO.c"
+ Parameters:    Size  Location     Type
+  a_u8port        1    wreg     unsigned char 
+  a_u8pin         1    0[BANK0 ] unsigned char 
+  a_u8directio    1    1[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  a_u8port        1    4[BANK0 ] unsigned char 
+  retVal          1    0        enum E10
+ Return value:  Size  Location     Type
+                  1    wreg      enum E10
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       2       0       0       0
+      Locals:         0       2       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       6       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_SevenSegment_SelectChip
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _GPIO_Enable_Pull_Up_On_PortB *****************
+ Defined at:
+		line 762 in file "GPIO.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _External_interrupt_select_falling_edge *****************
+ Defined at:
+		line 257 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0       1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _External_interrupt_enable *****************
+ Defined at:
+		line 209 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _EEPROM_Initialization *****************
+ Defined at:
+		line 36 in file "EEPROM24c04.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_I2C_Master_Initialization
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _I2C_Master_Initialization *****************
+ Defined at:
+		line 37 in file "I2C.c"
+ Parameters:    Size  Location     Type
+  a_I2C_master    1    wreg     enum E10
+  a_I2C_baud_r    2   14[BANK0 ] enum E14
+ Auto vars:     Size  Location     Type
+  a_I2C_master    1   21[BANK0 ] enum E10
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       2       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       5       0       0       0
+      Totals:         0       8       0       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		___lldiv
+ This function is called by:
+		_EEPROM_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function ___lldiv *****************
+ Defined at:
+		line 5 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c"
+ Parameters:    Size  Location     Type
+  divisor         4    0[BANK0 ] unsigned long 
+  dividend        4    4[BANK0 ] unsigned long 
+ Auto vars:     Size  Location     Type
+  quotient        4    9[BANK0 ] unsigned long 
+  counter         1   13[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  4    0[BANK0 ] unsigned long 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       8       0       0       0
+      Locals:         0       5       0       0       0
+      Temps:          0       1       0       0       0
+      Totals:         0      14       0       0       0
+Total ram usage:       14 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_I2C_Master_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _ADC_Select_prescaler *****************
+ Defined at:
+		line 178 in file "ADC.c"
+ Parameters:    Size  Location     Type
+  a_ADC_presca    1    wreg     enum E20
+ Auto vars:     Size  Location     Type
+  a_ADC_presca    1    2[BANK0 ] enum E20
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       3       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _ADC_Initialization *****************
+ Defined at:
+		line 38 in file "ADC.c"
+ Parameters:    Size  Location     Type
+  a_ADC_channe    1    wreg     enum E10
+  a_ADC_Vref_h    1    0[BANK0 ] enum E33
+  a_ADC_Vref_l    1    1[BANK0 ] enum E33
+ Auto vars:     Size  Location     Type
+  a_ADC_channe    1    4[BANK0 ] enum E10
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       2       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          0       2       0       0       0
+      Totals:         0       5       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_Heater_Initialization
+ This function uses a non-reentrant model
+
+
+ *************** function _CPU_sleep *****************
+ Defined at:
+		line 39 in file "CPU_sleep.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _ISR *****************
+ Defined at:
+		line 985 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          5       0       0       0       0
+      Totals:         5       0       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Absolute function
+		_TIMER1_ISR
+ This function is called by:
+		Interrupt level 1
+ This function uses a non-reentrant model
+
+
+ *************** function _TIMER1_ISR *****************
+ Defined at:
+		line 134 in file "heater.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          2       0       0       0       0
+      Totals:         2       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		i1_Timer1_write_counter
+ This function is called by:
+		_Heater_Initialization
+		_ISR
+ This function uses a non-reentrant model
+
+
+ *************** function i1_Timer1_write_counter *****************
+ Defined at:
+		line 238 in file "timers.c"
+ Parameters:    Size  Location     Type
+  a_u16init_va    2    0[COMMON] unsigned short 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         2       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          1       0       0       0       0
+      Totals:         3       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_TIMER1_ISR
+ This function uses a non-reentrant model
+
+
+
+MODULE INFORMATION
+
+Module		Function		Class		Link	Load	Size
+SevenSegment_unportablePart.c
+		_SevenSegment_SelectChip		CODE           	041E	0000	179
+
+SevenSegment_unportablePart.c estimated size: 179
+
+timers.c
+		_Timer1_Initialization		CODE           	0C9D	0000	84
+		_Timer1_write_counter		CODE           	08A8	0000	17
+		_Timer1_enable 		CODE           	0835	0000	5
+		_Timer1_disable		CODE           	07F9	0000	8
+
+timers.c estimated size: 114
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+		___lwdiv       		CODE           	0B2B	0000	71
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c estimated size: 71
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+		___awdiv       		CODE           	0F2D	0000	106
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c estimated size: 106
+
+heater.c
+		_Heater_change_temperature		CODE           	0CF0	0000	85
+		_Heater_display_on_temperature		CODE           	0696	0000	120
+		_TIMER1_ISR    		CODE           	09E7	0000	54
+		_Check_ON_Push_Button		CODE           	0BB7	0000	72
+		_Heater_turn_on		CODE           	0AE6	0000	70
+		_Heater_heating_cooling_process		CODE           	04D0	0000	178
+		_Heater_blank_temperature		CODE           	08CA	0000	36
+		_Heater_reading_last_ten_temperature_values		CODE           	060C	0000	139
+		_Heater_turn_off		CODE           	0F96	0000	107
+		_Heater_display_off_temperature		CODE           	08B8	0000	19
+		_Heater_Initialization		CODE           	0357	0000	200
+		_Heater_check_if_change_state_to_setup_or_off		CODE           	0E5E	0000	104
+
+heater.c estimated size: 1184
+
+EEPROM24c04.c
+		_EEPROM_Read_Byte		CODE           	0B71	0000	71
+		_EEPROM_Save_Byte		CODE           	0935	0000	39
+		_EEPROM_Initialization		CODE           	086C	0000	14
+
+EEPROM24c04.c estimated size: 124
+
+CPU_sleep.c
+		_CPU_sleep     		CODE           	0829	0000	3
+
+CPU_sleep.c estimated size: 3
+
+I2C.c
+		_I2C_Master_Initialization		CODE           	0DFC	0000	99
+		_I2C_master_send_start_condition		CODE           	0988	0000	48
+		_I2C_master_send_stop_condition		CODE           	08ED	0000	37
+		_I2C_master_send_address		CODE           	0A1C	0000	65
+		_I2C_master_send_repeated_start_condition		CODE           	0911	0000	37
+		_I2C_master_receive_data		CODE           	0D9F	0000	94
+		_I2C_master_send_data		CODE           	095B	0000	46
+
+I2C.c estimated size: 426
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+		___lldiv       		CODE           	0EC5	0000	105
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c estimated size: 105
+
+interrupt.c
+		_ISR           		CODE           	09B7	0000	49
+		_Peripherals_interrupt_enable		CODE           	082F	0000	3
+		_Timer1_enable_overflow_interrupt		CODE           	0831	0000	5
+		_Global_interrupt_enable		CODE           	082D	0000	3
+		_Peripherals_interrupt_disable		CODE           	0839	0000	8
+		_External_interrupt_enable		CODE           	082B	0000	3
+		_External_interrupt_select_falling_edge		CODE           	0850	0000	10
+		_Timer1_set_callback_function		CODE           	0840	0000	9
+
+interrupt.c estimated size: 90
+
+shared
+		__i1fptable    		ENTRY          	0033	0000	10
+		i1_Timer1_write_counter		CODE           	0888	0000	17
+		__initialization		CODE           	0015	0000	26
+
+shared estimated size: 53
+
+ADC.c
+		_ADC_Start_conversion		CODE           	0898	0000	17
+		_ADC_Read_value		CODE           	0BFE	0000	79
+		_ADC_Select_prescaler		CODE           	077B	0000	108
+		_ADC_Initialization		CODE           	0150	0000	264
+
+ADC.c estimated size: 468
+
+SevenSegment.c
+		_SevenSegment_Display		CODE           	0AA1	0000	70
+		_SevenSegment_Initialization		CODE           	0862	0000	11
+
+SevenSegment.c estimated size: 81
+
+GPIO.c
+		_GPIO_Enable_Pull_Up_On_PortB		CODE           	0859	0000	10
+		_GPIO_WriteOnPort		CODE           	0A5C	0000	70
+		_GPIO_SetPortDirection		CODE           	0581	0000	140
+		_GPIO_ReadFromPin		CODE           	070D	0000	111
+		_GPIO_SetPinDirection		CODE           	003C	0000	277
+		_GPIO_WriteOnPin		CODE           	0257	0000	257
+
+GPIO.c estimated size: 865
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+		___awmod       		CODE           	0D44	0000	92
+
+C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c estimated size: 92
+
+main.c
+		_main          		CODE           	0C4C	0000	82
+
+main.c estimated size: 82
+

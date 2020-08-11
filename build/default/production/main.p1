@@ -1,0 +1,149 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"65 ./heater.h
+[; ;./heater.h: 65: void Heater_Initialization(void);
+[v _Heater_Initialization `(v ~T0 @X0 0 ef ]
+"30 main.c
+[; ;main.c: 30:                 if(Check_ON_Push_Button(1u , 0u) == PUSH_BUTTON_IS_PRESSED)
+[c E50 0 1 .. ]
+[n E50 . PUSH_BUTTON_IS_PRESSED PUSH_BUTTON_IS_NOT_PRESSED  ]
+"160 ./heater.h
+[; ;./heater.h: 160: EnumButton_State_t Check_ON_Push_Button(uint8 a_u8Port , uint8 a_u8Pin);
+[v _Check_ON_Push_Button `(E50 ~T0 @X0 0 ef2`uc`uc ]
+"79
+[; ;./heater.h: 79: void Heater_turn_on(void);
+[v _Heater_turn_on `(v ~T0 @X0 0 ef ]
+"33 ./CPU_sleep.h
+[; ;./CPU_sleep.h: 33: extern void CPU_sleep(void);
+[v _CPU_sleep `(v ~T0 @X0 0 ef ]
+"92 ./heater.h
+[; ;./heater.h: 92: void Heater_display_on_temperature(void);
+[v _Heater_display_on_temperature `(v ~T0 @X0 0 ef ]
+"120
+[; ;./heater.h: 120: void Heater_reading_last_ten_temperature_values(void);
+[v _Heater_reading_last_ten_temperature_values `(v ~T0 @X0 0 ef ]
+"133
+[; ;./heater.h: 133: void Heater_check_if_change_state_to_setup_or_off(void);
+[v _Heater_check_if_change_state_to_setup_or_off `(v ~T0 @X0 0 ef ]
+"146
+[; ;./heater.h: 146: void Heater_blank_temperature(void);
+[v _Heater_blank_temperature `(v ~T0 @X0 0 ef ]
+"106
+[; ;./heater.h: 106: void Heater_change_temperature(void);
+[v _Heater_change_temperature `(v ~T0 @X0 0 ef ]
+"58 main.c
+[; ;main.c: 58:         }
+[c E45 0 1 2 .. ]
+[n E45 . HEATER_OFF_STATE HEATER_ON_STATE HEATER_SET_TEMERATURE  ]
+"48 ./heater.h
+[; ;./heater.h: 48: extern EnumHeater_State_t g_Heater_state_t;
+[v _g_Heater_state_t `E45 ~T0 @X0 0 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"19 main.c
+[; ;main.c: 19: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"20
+[; ;main.c: 20: {
+{
+[e :U _main ]
+[f ]
+"22
+[; ;main.c: 22:     Heater_Initialization();
+[e ( _Heater_Initialization ..  ]
+"23
+[; ;main.c: 23:     while(1)
+[e :U 3 ]
+"24
+[; ;main.c: 24:     {
+{
+"26
+[; ;main.c: 26:         switch(g_Heater_state_t)
+[e $U 6  ]
+"27
+[; ;main.c: 27:         {
+{
+"28
+[; ;main.c: 28:             case HEATER_OFF_STATE:
+[e :U 7 ]
+"30
+[; ;main.c: 30:                 if(Check_ON_Push_Button(1u , 0u) == PUSH_BUTTON_IS_PRESSED)
+[e $ ! == -> ( _Check_ON_Push_Button (2 , -> -> 1 `ui `uc -> -> 0 `ui `uc `ui -> . `E50 0 `ui 8  ]
+"31
+[; ;main.c: 31:                 {
+{
+"33
+[; ;main.c: 33:                     Heater_turn_on();
+[e ( _Heater_turn_on ..  ]
+"34
+[; ;main.c: 34:                 }
+}
+[e $U 9  ]
+"35
+[; ;main.c: 35:                 else
+[e :U 8 ]
+"36
+[; ;main.c: 36:                 {
+{
+"38
+[; ;main.c: 38:                     CPU_sleep();
+[e ( _CPU_sleep ..  ]
+"39
+[; ;main.c: 39:                 }
+}
+[e :U 9 ]
+"40
+[; ;main.c: 40:                 break;
+[e $U 5  ]
+"41
+[; ;main.c: 41:             case HEATER_ON_STATE:
+[e :U 10 ]
+"43
+[; ;main.c: 43:                 Heater_display_on_temperature();
+[e ( _Heater_display_on_temperature ..  ]
+"45
+[; ;main.c: 45:                 Heater_reading_last_ten_temperature_values();
+[e ( _Heater_reading_last_ten_temperature_values ..  ]
+"47
+[; ;main.c: 47:                 Heater_check_if_change_state_to_setup_or_off();
+[e ( _Heater_check_if_change_state_to_setup_or_off ..  ]
+"48
+[; ;main.c: 48:                 break;
+[e $U 5  ]
+"49
+[; ;main.c: 49:             case HEATER_SET_TEMERATURE:
+[e :U 11 ]
+"51
+[; ;main.c: 51:                 Heater_blank_temperature();
+[e ( _Heater_blank_temperature ..  ]
+"53
+[; ;main.c: 53:                 Heater_change_temperature();
+[e ( _Heater_change_temperature ..  ]
+"54
+[; ;main.c: 54:                 break;
+[e $U 5  ]
+"55
+[; ;main.c: 55:             default:
+[e :U 12 ]
+"57
+[; ;main.c: 57:                 break;
+[e $U 5  ]
+"58
+[; ;main.c: 58:         }
+}
+[e $U 5  ]
+[e :U 6 ]
+[e [\ -> _g_Heater_state_t `ui , $ -> . `E45 0 `ui 7
+ , $ -> . `E45 1 `ui 10
+ , $ -> . `E45 2 `ui 11
+ 12 ]
+[e :U 5 ]
+"59
+[; ;main.c: 59:     }
+}
+[e :U 2 ]
+[e $U 3  ]
+[e :U 4 ]
+"60
+[; ;main.c: 60: }
+[e :UE 1 ]
+}

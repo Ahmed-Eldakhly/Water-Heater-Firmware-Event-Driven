@@ -1,0 +1,25 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"32 timer_config.c
+[; ;timer_config.c: 32: StrTimer1_config_t Timer1_config_t = {TIMER1_NO_PRESCALER , TIMER1_INTERNAL_CLOCK ,
+[c E14 0 1 2 3 .. ]
+[n E14 . TIMER1_NO_PRESCALER TIMER1_PRESCALER_2 TIMER1_PRESCALER_4 TIMER1_PRESCALER_8  ]
+[c E10 0 1 .. ]
+[n E10 . TIMER1_INTERNAL_CLOCK TIMER1_TRANSITION_ON_TCKI_PIN  ]
+[c E20 0 1 2 .. ]
+[n E20 . TIMER1_SYNC_WITH_EXTERNAL_CLOCK TIMER1_NOT_SYNC_WITH_EXTERNAL_CLOCK TIMER1_NO_EXTERNAL_CLOCK  ]
+"145 ./timers.h
+[; ;./timers.h: 145: typedef struct{
+[s S1 `E14 1 `E10 1 `E20 1 ]
+[n S1 . timer_prescaler_t timer_clock_source_t timer_sync_with_external_clock ]
+"32 timer_config.c
+[; ;timer_config.c: 32: StrTimer1_config_t Timer1_config_t = {TIMER1_NO_PRESCALER , TIMER1_INTERNAL_CLOCK ,
+[v _Timer1_config_t `S1 ~T0 @X0 1 e ]
+[i _Timer1_config_t
+:U ..
+:U ..
+. `E14 0
+. `E10 0
+. `E20 2
+..
+..
+]

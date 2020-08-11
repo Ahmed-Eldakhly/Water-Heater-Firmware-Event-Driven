@@ -1,0 +1,539 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"37 I2C.c
+[; ;I2C.c: 37: void I2C_Master_Initialization(EnumI2C_MasterMode_t a_I2C_master_mode_t ,
+[c E10 0 1 .. ]
+[n E10 . I2C_MASTER_MODE I2C_FIRMWARE_CONTROLLED_MASTER_MODE  ]
+[c E14 100000 400000 1000000 .. ]
+[n E14 . I2C_100KHZ I2C_400KHZ I2C_1MHZ  ]
+"172
+[; ;I2C.c: 172: EnumI2C_Slave_Ack_t I2C_master_send_address(uint8 a_I2C_Address , EnumI2C_operation_t a_I2C_operaton_t)
+[c E19 0 1 .. ]
+[n E19 . I2C_WRITE_OPERATION I2C_READ_OPERATION  ]
+[c E27 0 1 .. ]
+[n E27 . I2C_SLAVE_ACK I2C_SLAVE_NOT_ACK  ]
+"244
+[; ;I2C.c: 244: uint8 I2C_master_receive_data(EnumI2C_Ack_Status_t a_I2C_ack_status_t)
+[c E23 0 1 .. ]
+[n E23 . I2C_SEND_ACK I2C_SEND_NOT_ACK  ]
+"37 I2C.c
+[; ;I2C.c: 37: void I2C_Master_Initialization(EnumI2C_MasterMode_t a_I2C_master_mode_t ,
+[v _I2C_Master_Initialization `(v ~T0 @X0 1 ef2`E10`E14 ]
+"39
+[; ;I2C.c: 39: {
+{
+[e :U _I2C_Master_Initialization ]
+"37
+[; ;I2C.c: 37: void I2C_Master_Initialization(EnumI2C_MasterMode_t a_I2C_master_mode_t ,
+[v _a_I2C_master_mode_t `E10 ~T0 @X0 1 r1 ]
+"38
+[; ;I2C.c: 38:                                EnumI2C_BaudRate_t a_I2C_baud_rate_t)
+[v _a_I2C_baud_rate_t `E14 ~T0 @X0 1 r2 ]
+"39
+[; ;I2C.c: 39: {
+[f ]
+"41
+[; ;I2C.c: 41:     *(volatile uint8*)0x14 &= 0xF0;
+[e =& *U -> -> 20 `i `*Vuc -> -> 240 `i `uc ]
+"43
+[; ;I2C.c: 43:     if(a_I2C_master_mode_t == I2C_FIRMWARE_CONTROLLED_MASTER_MODE)
+[e $ ! == -> _a_I2C_master_mode_t `ui -> . `E10 1 `ui 2  ]
+"44
+[; ;I2C.c: 44:     {
+{
+"45
+[; ;I2C.c: 45:         *(volatile uint8*)0x14 |= 0x0B;
+[e =| *U -> -> 20 `i `*Vuc -> -> 11 `i `uc ]
+"46
+[; ;I2C.c: 46:     }
+}
+[e $U 3  ]
+"47
+[; ;I2C.c: 47:     else
+[e :U 2 ]
+"48
+[; ;I2C.c: 48:     {
+{
+"49
+[; ;I2C.c: 49:         *(volatile uint8*)0x14 |= 0x08;
+[e =| *U -> -> 20 `i `*Vuc -> -> 8 `i `uc ]
+"50
+[; ;I2C.c: 50:     }
+}
+[e :U 3 ]
+"52
+[; ;I2C.c: 52:     *(volatile uint8*)0x94 &= ~(1 << 6u);
+[e =& *U -> -> 148 `i `*Vuc -> ~ << -> 1 `i -> 6 `ui `uc ]
+"54
+[; ;I2C.c: 54:     if(a_I2C_baud_rate_t == I2C_400KHZ)
+[e $ ! == -> -> _a_I2C_baud_rate_t `l `ul -> . `E14 1 `ul 4  ]
+"55
+[; ;I2C.c: 55:     {
+{
+"56
+[; ;I2C.c: 56:         *(volatile uint8*)0x94 &= ~(1 << 7u);
+[e =& *U -> -> 148 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"57
+[; ;I2C.c: 57:     }
+}
+[e $U 5  ]
+"58
+[; ;I2C.c: 58:     else
+[e :U 4 ]
+"59
+[; ;I2C.c: 59:     {
+{
+"60
+[; ;I2C.c: 60:         *(volatile uint8*)0x94 |= 1 << 7u;
+[e =| *U -> -> 148 `i `*Vuc -> << -> 1 `i -> 7 `ui `uc ]
+"61
+[; ;I2C.c: 61:     }
+}
+[e :U 5 ]
+"63
+[; ;I2C.c: 63:     *(volatile uint8*)0x93 = (8000000u / (4 * a_I2C_baud_rate_t)) - 1;
+[e = *U -> -> 147 `i `*Vuc -> - / -> 8000000 `ul * -> -> -> 4 `i `l `ul -> -> _a_I2C_baud_rate_t `l `ul -> -> -> 1 `i `l `ul `uc ]
+"65
+[; ;I2C.c: 65:     *(volatile uint8*)0x87 |= 1 << 3u;
+[e =| *U -> -> 135 `i `*Vuc -> << -> 1 `i -> 3 `ui `uc ]
+"66
+[; ;I2C.c: 66:     *(volatile uint8*)0x87 |= 1 << 4u;
+[e =| *U -> -> 135 `i `*Vuc -> << -> 1 `i -> 4 `ui `uc ]
+"68
+[; ;I2C.c: 68:     *(volatile uint8*)0x14 |= 1 << 5u;
+[e =| *U -> -> 20 `i `*Vuc -> << -> 1 `i -> 5 `ui `uc ]
+"69
+[; ;I2C.c: 69: }
+[e :UE 1 ]
+}
+"82
+[; ;I2C.c: 82: void I2C_master_send_start_condition(void)
+[v _I2C_master_send_start_condition `(v ~T0 @X0 1 ef ]
+"83
+[; ;I2C.c: 83: {
+{
+[e :U _I2C_master_send_start_condition ]
+[f ]
+"85
+[; ;I2C.c: 85:     if((((*(volatile uint8*)0x94 >> 2u) & 0x01) || (*(volatile uint8*)0x91 & 0x1F)) == 0)
+[e $ ! == -> || != & >> -> *U -> -> 148 `i `*Vuc `i -> 2 `ui -> 1 `i -> 0 `i != & -> *U -> -> 145 `i `*Vuc `i -> 31 `i -> 0 `i `i -> 0 `i 7  ]
+"86
+[; ;I2C.c: 86:     {
+{
+"88
+[; ;I2C.c: 88:         *(volatile uint8*)0x91 |= 1 << 0u;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 0 `ui `uc ]
+"90
+[; ;I2C.c: 90:         while(((*(volatile uint8*)0x91 >> 0u) & 0x01));
+[e $U 8  ]
+[e :U 9 ]
+[e :U 8 ]
+[e $ != & >> -> *U -> -> 145 `i `*Vuc `i -> 0 `ui -> 1 `i -> 0 `i 9  ]
+[e :U 10 ]
+"91
+[; ;I2C.c: 91:     }
+}
+[e :U 7 ]
+"93
+[; ;I2C.c: 93:     if(((*(volatile uint8*)0x14 >> 7u) & 0x01))
+[e $ ! != & >> -> *U -> -> 20 `i `*Vuc `i -> 7 `ui -> 1 `i -> 0 `i 11  ]
+"94
+[; ;I2C.c: 94:     {
+{
+"95
+[; ;I2C.c: 95:         *(volatile uint8*)0x14 &= ~(1 << 7u);
+[e =& *U -> -> 20 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"96
+[; ;I2C.c: 96:     }
+}
+[e $U 12  ]
+"97
+[; ;I2C.c: 97:     else
+[e :U 11 ]
+"98
+[; ;I2C.c: 98:     {
+{
+"100
+[; ;I2C.c: 100:     }
+}
+[e :U 12 ]
+"101
+[; ;I2C.c: 101: }
+[e :UE 6 ]
+}
+"114
+[; ;I2C.c: 114: void I2C_master_send_stop_condition(void)
+[v _I2C_master_send_stop_condition `(v ~T0 @X0 1 ef ]
+"115
+[; ;I2C.c: 115: {
+{
+[e :U _I2C_master_send_stop_condition ]
+[f ]
+"117
+[; ;I2C.c: 117:     *(volatile uint8*)0x91 |= 1 << 2u;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 2 `ui `uc ]
+"119
+[; ;I2C.c: 119:     while(((*(volatile uint8*)0x91 >> 2u) & 0x01));
+[e $U 14  ]
+[e :U 15 ]
+[e :U 14 ]
+[e $ != & >> -> *U -> -> 145 `i `*Vuc `i -> 2 `ui -> 1 `i -> 0 `i 15  ]
+[e :U 16 ]
+"121
+[; ;I2C.c: 121:     if(((*(volatile uint8*)0x14 >> 7u) & 0x01))
+[e $ ! != & >> -> *U -> -> 20 `i `*Vuc `i -> 7 `ui -> 1 `i -> 0 `i 17  ]
+"122
+[; ;I2C.c: 122:     {
+{
+"123
+[; ;I2C.c: 123:         *(volatile uint8*)0x14 &= ~(1 << 7u);
+[e =& *U -> -> 20 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"124
+[; ;I2C.c: 124:     }
+}
+[e $U 18  ]
+"125
+[; ;I2C.c: 125:     else
+[e :U 17 ]
+"126
+[; ;I2C.c: 126:     {
+{
+"128
+[; ;I2C.c: 128:     }
+}
+[e :U 18 ]
+"129
+[; ;I2C.c: 129: }
+[e :UE 13 ]
+}
+"143
+[; ;I2C.c: 143: void I2C_master_send_repeated_start_condition(void)
+[v _I2C_master_send_repeated_start_condition `(v ~T0 @X0 1 ef ]
+"144
+[; ;I2C.c: 144: {
+{
+[e :U _I2C_master_send_repeated_start_condition ]
+[f ]
+"146
+[; ;I2C.c: 146:     *(volatile uint8*)0x91 |= 1 << 1u;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 1 `ui `uc ]
+"148
+[; ;I2C.c: 148:     while(((*(volatile uint8*)0x91 >> 1u) & 0x01));
+[e $U 20  ]
+[e :U 21 ]
+[e :U 20 ]
+[e $ != & >> -> *U -> -> 145 `i `*Vuc `i -> 1 `ui -> 1 `i -> 0 `i 21  ]
+[e :U 22 ]
+"150
+[; ;I2C.c: 150:     if(((*(volatile uint8*)0x14 >> 7u) & 0x01))
+[e $ ! != & >> -> *U -> -> 20 `i `*Vuc `i -> 7 `ui -> 1 `i -> 0 `i 23  ]
+"151
+[; ;I2C.c: 151:     {
+{
+"152
+[; ;I2C.c: 152:         *(volatile uint8*)0x14 &= ~(1 << 7u);
+[e =& *U -> -> 20 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"153
+[; ;I2C.c: 153:     }
+}
+[e $U 24  ]
+"154
+[; ;I2C.c: 154:     else
+[e :U 23 ]
+"155
+[; ;I2C.c: 155:     {
+{
+"157
+[; ;I2C.c: 157:     }
+}
+[e :U 24 ]
+"158
+[; ;I2C.c: 158: }
+[e :UE 19 ]
+}
+"172
+[; ;I2C.c: 172: EnumI2C_Slave_Ack_t I2C_master_send_address(uint8 a_I2C_Address , EnumI2C_operation_t a_I2C_operaton_t)
+[v _I2C_master_send_address `(E27 ~T0 @X0 1 ef2`uc`E19 ]
+"173
+[; ;I2C.c: 173: {
+{
+[e :U _I2C_master_send_address ]
+"172
+[; ;I2C.c: 172: EnumI2C_Slave_Ack_t I2C_master_send_address(uint8 a_I2C_Address , EnumI2C_operation_t a_I2C_operaton_t)
+[v _a_I2C_Address `uc ~T0 @X0 1 r1 ]
+[v _a_I2C_operaton_t `E19 ~T0 @X0 1 r2 ]
+"173
+[; ;I2C.c: 173: {
+[f ]
+"175
+[; ;I2C.c: 175:     EnumI2C_Slave_Ack_t retVal_t;
+[v _retVal_t `E27 ~T0 @X0 1 a ]
+"177
+[; ;I2C.c: 177:     *(volatile uint8*)0x13 = (a_I2C_Address << 1) | a_I2C_operaton_t;
+[e = *U -> -> 19 `i `*Vuc -> | -> << -> _a_I2C_Address `i -> 1 `i `ui -> _a_I2C_operaton_t `ui `uc ]
+"179
+[; ;I2C.c: 179:     while(((*(volatile uint8*)0x14 >> 7u) & 0x01))
+[e $U 26  ]
+[e :U 27 ]
+"180
+[; ;I2C.c: 180:     {
+{
+"181
+[; ;I2C.c: 181:         *(volatile uint8*)0x14 &= ~(1 << 7u);
+[e =& *U -> -> 20 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"183
+[; ;I2C.c: 183:         *(volatile uint8*)0x13 = (a_I2C_Address << 1) | a_I2C_operaton_t;
+[e = *U -> -> 19 `i `*Vuc -> | -> << -> _a_I2C_Address `i -> 1 `i `ui -> _a_I2C_operaton_t `ui `uc ]
+"184
+[; ;I2C.c: 184:     }
+}
+[e :U 26 ]
+"179
+[; ;I2C.c: 179:     while(((*(volatile uint8*)0x14 >> 7u) & 0x01))
+[e $ != & >> -> *U -> -> 20 `i `*Vuc `i -> 7 `ui -> 1 `i -> 0 `i 27  ]
+[e :U 28 ]
+"186
+[; ;I2C.c: 186:     while(((*(volatile uint8*)0x0C >> 3u) & 0x01) == 0);
+[e $U 29  ]
+[e :U 30 ]
+[e :U 29 ]
+[e $ == & >> -> *U -> -> 12 `i `*Vuc `i -> 3 `ui -> 1 `i -> 0 `i 30  ]
+[e :U 31 ]
+"188
+[; ;I2C.c: 188:     *(volatile uint8*)0x0C &= ~(1 << 3u);
+[e =& *U -> -> 12 `i `*Vuc -> ~ << -> 1 `i -> 3 `ui `uc ]
+"190
+[; ;I2C.c: 190:     retVal_t = ((*(volatile uint8*)0x91 >> 6u) & 0x01);
+[e = _retVal_t -> & >> -> *U -> -> 145 `i `*Vuc `i -> 6 `ui -> 1 `i `E27 ]
+"192
+[; ;I2C.c: 192:     if(a_I2C_operaton_t == I2C_READ_OPERATION)
+[e $ ! == -> _a_I2C_operaton_t `ui -> . `E19 1 `ui 32  ]
+"193
+[; ;I2C.c: 193:     {
+{
+"194
+[; ;I2C.c: 194:         *(volatile uint8*)0x91 |= 1 << 3u;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 3 `ui `uc ]
+"195
+[; ;I2C.c: 195:     }
+}
+[e $U 33  ]
+"196
+[; ;I2C.c: 196:     else
+[e :U 32 ]
+"197
+[; ;I2C.c: 197:     {
+{
+"199
+[; ;I2C.c: 199:     }
+}
+[e :U 33 ]
+"201
+[; ;I2C.c: 201:     return retVal_t;
+[e ) _retVal_t ]
+[e $UE 25  ]
+"202
+[; ;I2C.c: 202: }
+[e :UE 25 ]
+}
+"215
+[; ;I2C.c: 215: EnumI2C_Slave_Ack_t I2C_master_send_data(uint8 a_I2C_Data)
+[v _I2C_master_send_data `(E27 ~T0 @X0 1 ef1`uc ]
+"216
+[; ;I2C.c: 216: {
+{
+[e :U _I2C_master_send_data ]
+"215
+[; ;I2C.c: 215: EnumI2C_Slave_Ack_t I2C_master_send_data(uint8 a_I2C_Data)
+[v _a_I2C_Data `uc ~T0 @X0 1 r1 ]
+"216
+[; ;I2C.c: 216: {
+[f ]
+"218
+[; ;I2C.c: 218:     *(volatile uint8*)0x13 = a_I2C_Data;
+[e = *U -> -> 19 `i `*Vuc _a_I2C_Data ]
+"220
+[; ;I2C.c: 220:     while(((*(volatile uint8*)0x14 >> 7u) & 0x01))
+[e $U 35  ]
+[e :U 36 ]
+"221
+[; ;I2C.c: 221:     {
+{
+"222
+[; ;I2C.c: 222:         *(volatile uint8*)0x14 &= ~(1 << 7u);
+[e =& *U -> -> 20 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"224
+[; ;I2C.c: 224:         *(volatile uint8*)0x13 = a_I2C_Data;
+[e = *U -> -> 19 `i `*Vuc _a_I2C_Data ]
+"225
+[; ;I2C.c: 225:     }
+}
+[e :U 35 ]
+"220
+[; ;I2C.c: 220:     while(((*(volatile uint8*)0x14 >> 7u) & 0x01))
+[e $ != & >> -> *U -> -> 20 `i `*Vuc `i -> 7 `ui -> 1 `i -> 0 `i 36  ]
+[e :U 37 ]
+"226
+[; ;I2C.c: 226:     while(((*(volatile uint8*)0x0C >> 3u) & 0x01) == 0);
+[e $U 38  ]
+[e :U 39 ]
+[e :U 38 ]
+[e $ == & >> -> *U -> -> 12 `i `*Vuc `i -> 3 `ui -> 1 `i -> 0 `i 39  ]
+[e :U 40 ]
+"228
+[; ;I2C.c: 228:     *(volatile uint8*)0x0C &= ~(1 << 3u);
+[e =& *U -> -> 12 `i `*Vuc -> ~ << -> 1 `i -> 3 `ui `uc ]
+"230
+[; ;I2C.c: 230:     return ((*(volatile uint8*)0x91 >> 6u) & 0x01);
+[e ) -> & >> -> *U -> -> 145 `i `*Vuc `i -> 6 `ui -> 1 `i `E27 ]
+[e $UE 34  ]
+"231
+[; ;I2C.c: 231: }
+[e :UE 34 ]
+}
+"244
+[; ;I2C.c: 244: uint8 I2C_master_receive_data(EnumI2C_Ack_Status_t a_I2C_ack_status_t)
+[v _I2C_master_receive_data `(uc ~T0 @X0 1 ef1`E23 ]
+"245
+[; ;I2C.c: 245: {
+{
+[e :U _I2C_master_receive_data ]
+"244
+[; ;I2C.c: 244: uint8 I2C_master_receive_data(EnumI2C_Ack_Status_t a_I2C_ack_status_t)
+[v _a_I2C_ack_status_t `E23 ~T0 @X0 1 r1 ]
+"245
+[; ;I2C.c: 245: {
+[f ]
+"247
+[; ;I2C.c: 247:     uint8 u8_retVal;
+[v _u8_retVal `uc ~T0 @X0 1 a ]
+"249
+[; ;I2C.c: 249:     if(a_I2C_ack_status_t == I2C_SEND_ACK)
+[e $ ! == -> _a_I2C_ack_status_t `ui -> . `E23 0 `ui 42  ]
+"250
+[; ;I2C.c: 250:     {
+{
+"251
+[; ;I2C.c: 251:         *(volatile uint8*)0x91 &= ~(1 << 5u);
+[e =& *U -> -> 145 `i `*Vuc -> ~ << -> 1 `i -> 5 `ui `uc ]
+"252
+[; ;I2C.c: 252:     }
+}
+[e $U 43  ]
+"253
+[; ;I2C.c: 253:     else
+[e :U 42 ]
+"254
+[; ;I2C.c: 254:     {
+{
+"255
+[; ;I2C.c: 255:         *(volatile uint8*)0x91 |= 1 << 5u;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 5 `ui `uc ]
+"256
+[; ;I2C.c: 256:     }
+}
+[e :U 43 ]
+"258
+[; ;I2C.c: 258:     while(((*(volatile uint8*)0x91 >> 3u) & 0x01));
+[e $U 44  ]
+[e :U 45 ]
+[e :U 44 ]
+[e $ != & >> -> *U -> -> 145 `i `*Vuc `i -> 3 `ui -> 1 `i -> 0 `i 45  ]
+[e :U 46 ]
+"260
+[; ;I2C.c: 260:     if(((*(volatile uint8*)0x14 >> 7u) & 0x01))
+[e $ ! != & >> -> *U -> -> 20 `i `*Vuc `i -> 7 `ui -> 1 `i -> 0 `i 47  ]
+"261
+[; ;I2C.c: 261:     {
+{
+"262
+[; ;I2C.c: 262:         *(volatile uint8*)0x14 &= ~(1 << 7u);
+[e =& *U -> -> 20 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"263
+[; ;I2C.c: 263:     }
+}
+[e $U 48  ]
+"264
+[; ;I2C.c: 264:     else
+[e :U 47 ]
+"265
+[; ;I2C.c: 265:     {
+{
+"267
+[; ;I2C.c: 267:     }
+}
+[e :U 48 ]
+"269
+[; ;I2C.c: 269:     if(((*(volatile uint8*)0x14 >> 6u) & 0x01))
+[e $ ! != & >> -> *U -> -> 20 `i `*Vuc `i -> 6 `ui -> 1 `i -> 0 `i 49  ]
+"270
+[; ;I2C.c: 270:     {
+{
+"271
+[; ;I2C.c: 271:         *(volatile uint8*)0x14 &= ~(1 << 6u);
+[e =& *U -> -> 20 `i `*Vuc -> ~ << -> 1 `i -> 6 `ui `uc ]
+"272
+[; ;I2C.c: 272:     }
+}
+[e $U 50  ]
+"273
+[; ;I2C.c: 273:     else
+[e :U 49 ]
+"274
+[; ;I2C.c: 274:     {
+{
+"276
+[; ;I2C.c: 276:     }
+}
+[e :U 50 ]
+"278
+[; ;I2C.c: 278:     u8_retVal = *(volatile uint8*)0x13;
+[e = _u8_retVal *U -> -> 19 `i `*Vuc ]
+"280
+[; ;I2C.c: 280:     *(volatile uint8*)0x91 |= 1 << 4u;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 4 `ui `uc ]
+"282
+[; ;I2C.c: 282:     if(((*(volatile uint8*)0x14 >> 7u) & 0x01))
+[e $ ! != & >> -> *U -> -> 20 `i `*Vuc `i -> 7 `ui -> 1 `i -> 0 `i 51  ]
+"283
+[; ;I2C.c: 283:     {
+{
+"284
+[; ;I2C.c: 284:         *(volatile uint8*)0x14 &= ~(1 << 7u);
+[e =& *U -> -> 20 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"285
+[; ;I2C.c: 285:     }
+}
+[e $U 52  ]
+"286
+[; ;I2C.c: 286:     else
+[e :U 51 ]
+"287
+[; ;I2C.c: 287:     {
+{
+"289
+[; ;I2C.c: 289:     }
+}
+[e :U 52 ]
+"291
+[; ;I2C.c: 291:     return u8_retVal;
+[e ) _u8_retVal ]
+[e $UE 41  ]
+"292
+[; ;I2C.c: 292: }
+[e :UE 41 ]
+}
+"305
+[; ;I2C.c: 305: void I2C_Disable(void)
+[v _I2C_Disable `(v ~T0 @X0 1 ef ]
+"306
+[; ;I2C.c: 306: {
+{
+[e :U _I2C_Disable ]
+[f ]
+"308
+[; ;I2C.c: 308:     *(volatile uint8*)0x14 &= ~(1 << 5u);
+[e =& *U -> -> 20 `i `*Vuc -> ~ << -> 1 `i -> 5 `ui `uc ]
+"309
+[; ;I2C.c: 309: }
+[e :UE 53 ]
+}

@@ -1,0 +1,99 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"36 SevenSegment.c
+[; ;SevenSegment.c: 36:     GPIO_SetPortDirection(3u , 0u);
+[c E18 0 1 .. ]
+[n E18 . GPIO_CORRECT_SET GPIO_UNCORRECT_SET  ]
+"82 ./GPIO.h
+[; ;./GPIO.h: 82: extern EnumGPIO_Status_t GPIO_SetPortDirection(uint8 a_u8port , uint8 a_u8direction);
+[v _GPIO_SetPortDirection `(E18 ~T0 @X0 0 ef2`uc`uc ]
+"51 SevenSegment.c
+[; ;SevenSegment.c: 51: void SevenSegment_Display(uint8 a_u8displayNumber , EnumSevenSegment_DotStatus_t a_displayDot)
+[c E10 0 1 .. ]
+[n E10 . SEVEN_SEGMENT_DISPLAY_DOT SEVEN_SEGMENT_NOT_DISPLAY_DOT  ]
+"111 ./GPIO.h
+[; ;./GPIO.h: 111: extern EnumGPIO_Status_t GPIO_WriteOnPort(uint8 a_u8port , uint8 a_u8value);
+[v _GPIO_WriteOnPort `(E18 ~T0 @X0 0 ef2`uc`uc ]
+"97
+[; ;./GPIO.h: 97: extern EnumGPIO_Status_t GPIO_WriteOnPin(uint8 a_u8port , uint8 a_u8pin , uint8 a_u8value);
+[v _GPIO_WriteOnPin `(E18 ~T0 @X0 0 ef3`uc`uc`uc ]
+"34 SevenSegment.c
+[; ;SevenSegment.c: 34: void SevenSegment_Initialization(void)
+[v _SevenSegment_Initialization `(v ~T0 @X0 1 ef ]
+"35
+[; ;SevenSegment.c: 35: {
+{
+[e :U _SevenSegment_Initialization ]
+[f ]
+"36
+[; ;SevenSegment.c: 36:     GPIO_SetPortDirection(3u , 0u);
+[e ( _GPIO_SetPortDirection (2 , -> -> 3 `ui `uc -> -> 0 `ui `uc ]
+"37
+[; ;SevenSegment.c: 37: }
+[e :UE 1 ]
+}
+"51
+[; ;SevenSegment.c: 51: void SevenSegment_Display(uint8 a_u8displayNumber , EnumSevenSegment_DotStatus_t a_displayDot)
+[v _SevenSegment_Display `(v ~T0 @X0 1 ef2`uc`E10 ]
+"52
+[; ;SevenSegment.c: 52: {
+{
+[e :U _SevenSegment_Display ]
+"51
+[; ;SevenSegment.c: 51: void SevenSegment_Display(uint8 a_u8displayNumber , EnumSevenSegment_DotStatus_t a_displayDot)
+[v _a_u8displayNumber `uc ~T0 @X0 1 r1 ]
+[v _a_displayDot `E10 ~T0 @X0 1 r2 ]
+"52
+[; ;SevenSegment.c: 52: {
+[f ]
+[v F56 `uc ~T0 @X0 -> 10 `i s ]
+[i F56
+:U ..
+"57
+[; ;SevenSegment.c: 57:     uint8 u8numberRepresentation[10] = { 0x3F , 0x06 , 0x5B , 0x4F , 0x66 , 0x6D , 0x7D , 0x07 , 0x7F , 0x6F };
+-> -> 63 `i `uc
+-> -> 6 `i `uc
+-> -> 91 `i `uc
+-> -> 79 `i `uc
+-> -> 102 `i `uc
+-> -> 109 `i `uc
+-> -> 125 `i `uc
+-> -> 7 `i `uc
+-> -> 127 `i `uc
+-> -> 111 `i `uc
+..
+]
+[v _u8numberRepresentation `uc ~T0 @X0 -> 10 `i a ]
+[e = _u8numberRepresentation F56 ]
+"60
+[; ;SevenSegment.c: 60:     GPIO_WriteOnPort(3u , u8numberRepresentation[a_u8displayNumber]);
+[e ( _GPIO_WriteOnPort (2 , -> -> 3 `ui `uc *U + &U _u8numberRepresentation * -> _a_u8displayNumber `ux -> -> # *U &U _u8numberRepresentation `ui `ux ]
+"72
+[; ;SevenSegment.c: 72:     if(a_displayDot == SEVEN_SEGMENT_DISPLAY_DOT)
+[e $ ! == -> _a_displayDot `ui -> . `E10 0 `ui 3  ]
+"73
+[; ;SevenSegment.c: 73:     {
+{
+"74
+[; ;SevenSegment.c: 74:         GPIO_WriteOnPin(3u , 7u , 1u);
+[e ( _GPIO_WriteOnPin (3 , , -> -> 3 `ui `uc -> -> 7 `ui `uc -> -> 1 `ui `uc ]
+"75
+[; ;SevenSegment.c: 75:     }
+}
+[e $U 4  ]
+"76
+[; ;SevenSegment.c: 76:     else
+[e :U 3 ]
+"77
+[; ;SevenSegment.c: 77:     {
+{
+"78
+[; ;SevenSegment.c: 78:         GPIO_WriteOnPin(3u , 7u , 0u);
+[e ( _GPIO_WriteOnPin (3 , , -> -> 3 `ui `uc -> -> 7 `ui `uc -> -> 0 `ui `uc ]
+"79
+[; ;SevenSegment.c: 79:     }
+}
+[e :U 4 ]
+"81
+[; ;SevenSegment.c: 81: }
+[e :UE 2 ]
+}

@@ -1,0 +1,361 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"39 EEPROM24c04.c
+[; ;EEPROM24c04.c: 39:     I2C_Master_Initialization(I2C_MASTER_MODE , I2C_100KHZ);
+[c E28 0 1 .. ]
+[n E28 . I2C_MASTER_MODE I2C_FIRMWARE_CONTROLLED_MASTER_MODE  ]
+[c E32 100000 400000 1000000 .. ]
+[n E32 . I2C_100KHZ I2C_400KHZ I2C_1MHZ  ]
+"76 ./I2C.h
+[; ;./I2C.h: 76: extern void I2C_Master_Initialization(EnumI2C_MasterMode_t a_I2C_master_mode_t ,
+[v _I2C_Master_Initialization `(v ~T0 @X0 0 ef2`E28`E32 ]
+"90
+[; ;./I2C.h: 90: extern void I2C_master_send_start_condition(void);
+[v _I2C_master_send_start_condition `(v ~T0 @X0 0 ef ]
+"59 EEPROM24c04.c
+[; ;EEPROM24c04.c: 59:     I2C_master_send_address((0x50 | ((a_u16Location >> 8) & 0x0001)), I2C_WRITE_OPERATION);
+[c E37 0 1 .. ]
+[n E37 . I2C_WRITE_OPERATION I2C_READ_OPERATION  ]
+[c E45 0 1 .. ]
+[n E45 . I2C_SLAVE_ACK I2C_SLAVE_NOT_ACK  ]
+"131 ./I2C.h
+[; ;./I2C.h: 131: extern EnumI2C_Slave_Ack_t I2C_master_send_address(uint8 a_I2C_Address , EnumI2C_operation_t a_I2C_operaton_t);
+[v _I2C_master_send_address `(E45 ~T0 @X0 0 ef2`uc`E37 ]
+"144
+[; ;./I2C.h: 144: extern EnumI2C_Slave_Ack_t I2C_master_send_data(uint8 a_I2C_Data);
+[v _I2C_master_send_data `(E45 ~T0 @X0 0 ef1`uc ]
+"103
+[; ;./I2C.h: 103: extern void I2C_master_send_stop_condition(void);
+[v _I2C_master_send_stop_condition `(v ~T0 @X0 0 ef ]
+"117
+[; ;./I2C.h: 117: extern void I2C_master_send_repeated_start_condition(void);
+[v _I2C_master_send_repeated_start_condition `(v ~T0 @X0 0 ef ]
+"94 EEPROM24c04.c
+[; ;EEPROM24c04.c: 94:     u8_retVal = I2C_master_receive_data(I2C_SEND_NOT_ACK);
+[c E41 0 1 .. ]
+[n E41 . I2C_SEND_ACK I2C_SEND_NOT_ACK  ]
+"157 ./I2C.h
+[; ;./I2C.h: 157: extern uint8 I2C_master_receive_data(EnumI2C_Ack_Status_t a_I2C_ack_status_t);
+[v _I2C_master_receive_data `(uc ~T0 @X0 0 ef1`E41 ]
+"36 EEPROM24c04.c
+[; ;EEPROM24c04.c: 36: extern void EEPROM_Initialization(void)
+[v _EEPROM_Initialization `(v ~T0 @X0 1 ef ]
+"37
+[; ;EEPROM24c04.c: 37: {
+{
+[e :U _EEPROM_Initialization ]
+[f ]
+"39
+[; ;EEPROM24c04.c: 39:     I2C_Master_Initialization(I2C_MASTER_MODE , I2C_100KHZ);
+[e ( _I2C_Master_Initialization (2 , . `E28 0 . `E32 0 ]
+"40
+[; ;EEPROM24c04.c: 40: }
+[e :UE 1 ]
+}
+"54
+[; ;EEPROM24c04.c: 54: void EEPROM_Save_Byte(uint16 a_u16Location , uint8 a_u8Data)
+[v _EEPROM_Save_Byte `(v ~T0 @X0 1 ef2`us`uc ]
+"55
+[; ;EEPROM24c04.c: 55: {
+{
+[e :U _EEPROM_Save_Byte ]
+"54
+[; ;EEPROM24c04.c: 54: void EEPROM_Save_Byte(uint16 a_u16Location , uint8 a_u8Data)
+[v _a_u16Location `us ~T0 @X0 1 r1 ]
+[v _a_u8Data `uc ~T0 @X0 1 r2 ]
+"55
+[; ;EEPROM24c04.c: 55: {
+[f ]
+"57
+[; ;EEPROM24c04.c: 57:     I2C_master_send_start_condition();
+[e ( _I2C_master_send_start_condition ..  ]
+"59
+[; ;EEPROM24c04.c: 59:     I2C_master_send_address((0x50 | ((a_u16Location >> 8) & 0x0001)), I2C_WRITE_OPERATION);
+[e ( _I2C_master_send_address (2 , -> | -> -> 80 `i `ui & >> -> _a_u16Location `ui -> 8 `i -> -> 1 `i `ui `uc . `E37 0 ]
+"61
+[; ;EEPROM24c04.c: 61:     I2C_master_send_data((uint8)(a_u16Location & 0x00FF));
+[e ( _I2C_master_send_data (1 -> & -> _a_u16Location `ui -> -> 255 `i `ui `uc ]
+"63
+[; ;EEPROM24c04.c: 63:     I2C_master_send_data(a_u8Data);
+[e ( _I2C_master_send_data (1 _a_u8Data ]
+"65
+[; ;EEPROM24c04.c: 65:     I2C_master_send_stop_condition();
+[e ( _I2C_master_send_stop_condition ..  ]
+"66
+[; ;EEPROM24c04.c: 66: }
+[e :UE 2 ]
+}
+"79
+[; ;EEPROM24c04.c: 79: uint8 EEPROM_Read_Byte(uint16 a_u16Location)
+[v _EEPROM_Read_Byte `(uc ~T0 @X0 1 ef1`us ]
+"80
+[; ;EEPROM24c04.c: 80: {
+{
+[e :U _EEPROM_Read_Byte ]
+"79
+[; ;EEPROM24c04.c: 79: uint8 EEPROM_Read_Byte(uint16 a_u16Location)
+[v _a_u16Location `us ~T0 @X0 1 r1 ]
+"80
+[; ;EEPROM24c04.c: 80: {
+[f ]
+"82
+[; ;EEPROM24c04.c: 82:     uint8 u8_retVal;
+[v _u8_retVal `uc ~T0 @X0 1 a ]
+"84
+[; ;EEPROM24c04.c: 84:     I2C_master_send_start_condition();
+[e ( _I2C_master_send_start_condition ..  ]
+"86
+[; ;EEPROM24c04.c: 86:     I2C_master_send_address((0x50 | ((a_u16Location >> 8) & 0x0001)), I2C_WRITE_OPERATION);
+[e ( _I2C_master_send_address (2 , -> | -> -> 80 `i `ui & >> -> _a_u16Location `ui -> 8 `i -> -> 1 `i `ui `uc . `E37 0 ]
+"88
+[; ;EEPROM24c04.c: 88:     I2C_master_send_data((uint8)(a_u16Location & 0x00FF));
+[e ( _I2C_master_send_data (1 -> & -> _a_u16Location `ui -> -> 255 `i `ui `uc ]
+"90
+[; ;EEPROM24c04.c: 90:     I2C_master_send_repeated_start_condition();
+[e ( _I2C_master_send_repeated_start_condition ..  ]
+"92
+[; ;EEPROM24c04.c: 92:     I2C_master_send_address(0x50 , I2C_READ_OPERATION);
+[e ( _I2C_master_send_address (2 , -> -> 80 `i `uc . `E37 1 ]
+"94
+[; ;EEPROM24c04.c: 94:     u8_retVal = I2C_master_receive_data(I2C_SEND_NOT_ACK);
+[e = _u8_retVal ( _I2C_master_receive_data (1 . `E41 1 ]
+"96
+[; ;EEPROM24c04.c: 96:     I2C_master_send_stop_condition();
+[e ( _I2C_master_send_stop_condition ..  ]
+"98
+[; ;EEPROM24c04.c: 98:     EEPROM_Save_Byte(0,0);
+[e ( _EEPROM_Save_Byte (2 , -> -> 0 `i `us -> -> 0 `i `uc ]
+"100
+[; ;EEPROM24c04.c: 100:     return u8_retVal;
+[e ) _u8_retVal ]
+[e $UE 3  ]
+"101
+[; ;EEPROM24c04.c: 101: }
+[e :UE 3 ]
+}
+"116
+[; ;EEPROM24c04.c: 116: void EEPROM_Save_Array(uint16 a_u16Location , uint8* a_u8Data , uint8 a_u8Size)
+[v _EEPROM_Save_Array `(v ~T0 @X0 1 ef3`us`*uc`uc ]
+"117
+[; ;EEPROM24c04.c: 117: {
+{
+[e :U _EEPROM_Save_Array ]
+"116
+[; ;EEPROM24c04.c: 116: void EEPROM_Save_Array(uint16 a_u16Location , uint8* a_u8Data , uint8 a_u8Size)
+[v _a_u16Location `us ~T0 @X0 1 r1 ]
+[v _a_u8Data `*uc ~T0 @X0 1 r2 ]
+[v _a_u8Size `uc ~T0 @X0 1 r3 ]
+"117
+[; ;EEPROM24c04.c: 117: {
+[f ]
+"119
+[; ;EEPROM24c04.c: 119:     I2C_master_send_start_condition();
+[e ( _I2C_master_send_start_condition ..  ]
+"121
+[; ;EEPROM24c04.c: 121:     I2C_master_send_address((0x50 | (a_u16Location >> 8 & 0x0001)), I2C_WRITE_OPERATION);
+[e ( _I2C_master_send_address (2 , -> | -> -> 80 `i `ui & >> -> _a_u16Location `ui -> 8 `i -> -> 1 `i `ui `uc . `E37 0 ]
+"123
+[; ;EEPROM24c04.c: 123:     I2C_master_send_data((uint8)(a_u16Location & 0xFF));
+[e ( _I2C_master_send_data (1 -> & -> _a_u16Location `ui -> -> 255 `i `ui `uc ]
+"126
+[; ;EEPROM24c04.c: 126:     for(uint8 counter = 0; counter < a_u8Size && counter < 16u; counter++)
+{
+[v _counter `uc ~T0 @X0 1 a ]
+[e = _counter -> -> 0 `i `uc ]
+[e $U 8  ]
+[e :U 5 ]
+"127
+[; ;EEPROM24c04.c: 127:     {
+{
+"129
+[; ;EEPROM24c04.c: 129:         I2C_master_send_data(a_u8Data[counter]);
+[e ( _I2C_master_send_data (1 *U + _a_u8Data * -> _counter `ux -> -> # *U _a_u8Data `ui `ux ]
+"130
+[; ;EEPROM24c04.c: 130:     }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e :U 8 ]
+[e $ && < -> _counter `i -> _a_u8Size `i < -> _counter `ui -> 16 `ui 5  ]
+[e :U 6 ]
+}
+"132
+[; ;EEPROM24c04.c: 132:     I2C_master_send_stop_condition();
+[e ( _I2C_master_send_stop_condition ..  ]
+"133
+[; ;EEPROM24c04.c: 133: }
+[e :UE 4 ]
+}
+"148
+[; ;EEPROM24c04.c: 148: void EEPROM_Read_Array(uint16 a_u16Location , uint8* a_u8Data , uint8 a_u8Size)
+[v _EEPROM_Read_Array `(v ~T0 @X0 1 ef3`us`*uc`uc ]
+"149
+[; ;EEPROM24c04.c: 149: {
+{
+[e :U _EEPROM_Read_Array ]
+"148
+[; ;EEPROM24c04.c: 148: void EEPROM_Read_Array(uint16 a_u16Location , uint8* a_u8Data , uint8 a_u8Size)
+[v _a_u16Location `us ~T0 @X0 1 r1 ]
+[v _a_u8Data `*uc ~T0 @X0 1 r2 ]
+[v _a_u8Size `uc ~T0 @X0 1 r3 ]
+"149
+[; ;EEPROM24c04.c: 149: {
+[f ]
+"151
+[; ;EEPROM24c04.c: 151:     I2C_master_send_start_condition();
+[e ( _I2C_master_send_start_condition ..  ]
+"153
+[; ;EEPROM24c04.c: 153:     I2C_master_send_address((0x50 | ((a_u16Location >> 8) & 0x0001)), I2C_WRITE_OPERATION);
+[e ( _I2C_master_send_address (2 , -> | -> -> 80 `i `ui & >> -> _a_u16Location `ui -> 8 `i -> -> 1 `i `ui `uc . `E37 0 ]
+"155
+[; ;EEPROM24c04.c: 155:     I2C_master_send_data((uint8)(a_u16Location & 0x00FF));
+[e ( _I2C_master_send_data (1 -> & -> _a_u16Location `ui -> -> 255 `i `ui `uc ]
+"157
+[; ;EEPROM24c04.c: 157:     I2C_master_send_repeated_start_condition();
+[e ( _I2C_master_send_repeated_start_condition ..  ]
+"159
+[; ;EEPROM24c04.c: 159:     I2C_master_send_address(0x50 , I2C_READ_OPERATION);
+[e ( _I2C_master_send_address (2 , -> -> 80 `i `uc . `E37 1 ]
+"161
+[; ;EEPROM24c04.c: 161:     for(uint8 counter = 0; counter < a_u8Size; counter++)
+{
+[v _counter `uc ~T0 @X0 1 a ]
+[e = _counter -> -> 0 `i `uc ]
+[e $U 13  ]
+[e :U 10 ]
+"162
+[; ;EEPROM24c04.c: 162:     {
+{
+"163
+[; ;EEPROM24c04.c: 163:         a_u8Data[counter] = I2C_master_receive_data(I2C_SEND_ACK);
+[e = *U + _a_u8Data * -> _counter `ux -> -> # *U _a_u8Data `ui `ux ( _I2C_master_receive_data (1 . `E41 0 ]
+"164
+[; ;EEPROM24c04.c: 164:     }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e :U 13 ]
+[e $ < -> _counter `i -> _a_u8Size `i 10  ]
+[e :U 11 ]
+}
+"166
+[; ;EEPROM24c04.c: 166:     I2C_master_send_stop_condition();
+[e ( _I2C_master_send_stop_condition ..  ]
+"168
+[; ;EEPROM24c04.c: 168:     EEPROM_Save_Byte(0,0);
+[e ( _EEPROM_Save_Byte (2 , -> -> 0 `i `us -> -> 0 `i `uc ]
+"169
+[; ;EEPROM24c04.c: 169: }
+[e :UE 9 ]
+}
+"183
+[; ;EEPROM24c04.c: 183: void EEPROM_Save_Page(uint16 a_u16Location , uint8* a_u8Data)
+[v _EEPROM_Save_Page `(v ~T0 @X0 1 ef2`us`*uc ]
+"184
+[; ;EEPROM24c04.c: 184: {
+{
+[e :U _EEPROM_Save_Page ]
+"183
+[; ;EEPROM24c04.c: 183: void EEPROM_Save_Page(uint16 a_u16Location , uint8* a_u8Data)
+[v _a_u16Location `us ~T0 @X0 1 r1 ]
+[v _a_u8Data `*uc ~T0 @X0 1 r2 ]
+"184
+[; ;EEPROM24c04.c: 184: {
+[f ]
+"186
+[; ;EEPROM24c04.c: 186:     I2C_master_send_start_condition();
+[e ( _I2C_master_send_start_condition ..  ]
+"188
+[; ;EEPROM24c04.c: 188:     I2C_master_send_address((0x50 | (a_u16Location >> 8 & 0x0001)), I2C_WRITE_OPERATION);
+[e ( _I2C_master_send_address (2 , -> | -> -> 80 `i `ui & >> -> _a_u16Location `ui -> 8 `i -> -> 1 `i `ui `uc . `E37 0 ]
+"190
+[; ;EEPROM24c04.c: 190:     I2C_master_send_data((uint8)(a_u16Location & 0xFF));
+[e ( _I2C_master_send_data (1 -> & -> _a_u16Location `ui -> -> 255 `i `ui `uc ]
+"192
+[; ;EEPROM24c04.c: 192:     for(uint8 counter = 0; counter < 16u; counter++)
+{
+[v _counter `uc ~T0 @X0 1 a ]
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `ui -> 16 `ui 15  ]
+[e $U 16  ]
+[e :U 15 ]
+"193
+[; ;EEPROM24c04.c: 193:     {
+{
+"195
+[; ;EEPROM24c04.c: 195:         I2C_master_send_data(a_u8Data[counter]);
+[e ( _I2C_master_send_data (1 *U + _a_u8Data * -> _counter `ux -> -> # *U _a_u8Data `ui `ux ]
+"196
+[; ;EEPROM24c04.c: 196:     }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `ui -> 16 `ui 15  ]
+[e :U 16 ]
+}
+"198
+[; ;EEPROM24c04.c: 198:     I2C_master_send_stop_condition();
+[e ( _I2C_master_send_stop_condition ..  ]
+"199
+[; ;EEPROM24c04.c: 199: }
+[e :UE 14 ]
+}
+"212
+[; ;EEPROM24c04.c: 212: extern void EEPROM_Erase(void)
+[v _EEPROM_Erase `(v ~T0 @X0 1 ef ]
+"213
+[; ;EEPROM24c04.c: 213: {
+{
+[e :U _EEPROM_Erase ]
+[f ]
+"216
+[; ;EEPROM24c04.c: 216:     for(uint8 counter = 0; counter < 512u / 16u; counter++)
+{
+[v _counter `uc ~T0 @X0 1 a ]
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `ui / -> 512 `ui -> 16 `ui 19  ]
+[e $U 20  ]
+[e :U 19 ]
+"217
+[; ;EEPROM24c04.c: 217:     {
+{
+"219
+[; ;EEPROM24c04.c: 219:         I2C_master_send_start_condition();
+[e ( _I2C_master_send_start_condition ..  ]
+"221
+[; ;EEPROM24c04.c: 221:         I2C_master_send_address((0x50 | ((counter * 16u) >> 8 & 0x0001)), I2C_WRITE_OPERATION);
+[e ( _I2C_master_send_address (2 , -> | -> -> 80 `i `ui & >> * -> _counter `ui -> 16 `ui -> 8 `i -> -> 1 `i `ui `uc . `E37 0 ]
+"223
+[; ;EEPROM24c04.c: 223:         I2C_master_send_data((uint8)((counter * 16u) & 0xFF));
+[e ( _I2C_master_send_data (1 -> & * -> _counter `ui -> 16 `ui -> -> 255 `i `ui `uc ]
+"225
+[; ;EEPROM24c04.c: 225:         for(uint8 counter2 = 0; counter2 < 16u; counter2++)
+{
+[v _counter2 `uc ~T0 @X0 1 a ]
+[e = _counter2 -> -> 0 `i `uc ]
+[e $ < -> _counter2 `ui -> 16 `ui 22  ]
+[e $U 23  ]
+[e :U 22 ]
+"226
+[; ;EEPROM24c04.c: 226:         {
+{
+"228
+[; ;EEPROM24c04.c: 228:             I2C_master_send_data(0xFF);
+[e ( _I2C_master_send_data (1 -> -> 255 `i `uc ]
+"229
+[; ;EEPROM24c04.c: 229:         }
+}
+[e ++ _counter2 -> -> 1 `i `uc ]
+[e $ < -> _counter2 `ui -> 16 `ui 22  ]
+[e :U 23 ]
+}
+"231
+[; ;EEPROM24c04.c: 231:         I2C_master_send_stop_condition();
+[e ( _I2C_master_send_stop_condition ..  ]
+"232
+[; ;EEPROM24c04.c: 232:     }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `ui / -> 512 `ui -> 16 `ui 19  ]
+[e :U 20 ]
+}
+"233
+[; ;EEPROM24c04.c: 233: }
+[e :UE 18 ]
+}

@@ -1,0 +1,153 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"37 SevenSegment_unportablePart.c
+[; ;SevenSegment_unportablePart.c: 37: void SevenSegment_SelectChip(EnumSevenSegment_Status_t a_Chip1 , EnumSevenSegment_Status_t a_Chip2 ,
+[c E2 0 1 .. ]
+[n E2 . SEVEN_SEGMENT_ENABLE_CHIP SEVEN_SEGMENT_DISABLE_CHIP  ]
+"44
+[; ;SevenSegment_unportablePart.c: 44:         GPIO_SetPinDirection(0u , 2u , 0u);
+[c E19 0 1 .. ]
+[n E19 . GPIO_CORRECT_SET GPIO_UNCORRECT_SET  ]
+"68 ./GPIO.h
+[; ;./GPIO.h: 68: extern EnumGPIO_Status_t GPIO_SetPinDirection(uint8 a_u8port , uint8 a_u8pin , uint8 a_u8direction);
+[v _GPIO_SetPinDirection `(E19 ~T0 @X0 0 ef3`uc`uc`uc ]
+"97
+[; ;./GPIO.h: 97: extern EnumGPIO_Status_t GPIO_WriteOnPin(uint8 a_u8port , uint8 a_u8pin , uint8 a_u8value);
+[v _GPIO_WriteOnPin `(E19 ~T0 @X0 0 ef3`uc`uc`uc ]
+"37 SevenSegment_unportablePart.c
+[; ;SevenSegment_unportablePart.c: 37: void SevenSegment_SelectChip(EnumSevenSegment_Status_t a_Chip1 , EnumSevenSegment_Status_t a_Chip2 ,
+[v _SevenSegment_SelectChip `(v ~T0 @X0 1 ef4`E2`E2`E2`E2 ]
+"39
+[; ;SevenSegment_unportablePart.c: 39: {
+{
+[e :U _SevenSegment_SelectChip ]
+"37
+[; ;SevenSegment_unportablePart.c: 37: void SevenSegment_SelectChip(EnumSevenSegment_Status_t a_Chip1 , EnumSevenSegment_Status_t a_Chip2 ,
+[v _a_Chip1 `E2 ~T0 @X0 1 r1 ]
+[v _a_Chip2 `E2 ~T0 @X0 1 r2 ]
+"38
+[; ;SevenSegment_unportablePart.c: 38:                              EnumSevenSegment_Status_t a_Chip3 , EnumSevenSegment_Status_t a_Chip4)
+[v _a_Chip3 `E2 ~T0 @X0 1 r3 ]
+[v _a_Chip4 `E2 ~T0 @X0 1 r4 ]
+"39
+[; ;SevenSegment_unportablePart.c: 39: {
+[f ]
+"41
+[; ;SevenSegment_unportablePart.c: 41:     if(a_Chip1 == SEVEN_SEGMENT_ENABLE_CHIP)
+[e $ ! == -> _a_Chip1 `ui -> . `E2 0 `ui 2  ]
+"42
+[; ;SevenSegment_unportablePart.c: 42:     {
+{
+"44
+[; ;SevenSegment_unportablePart.c: 44:         GPIO_SetPinDirection(0u , 2u , 0u);
+[e ( _GPIO_SetPinDirection (3 , , -> -> 0 `ui `uc -> -> 2 `ui `uc -> -> 0 `ui `uc ]
+"45
+[; ;SevenSegment_unportablePart.c: 45:         GPIO_WriteOnPin(0u , 2u , 1u);
+[e ( _GPIO_WriteOnPin (3 , , -> -> 0 `ui `uc -> -> 2 `ui `uc -> -> 1 `ui `uc ]
+"46
+[; ;SevenSegment_unportablePart.c: 46:     }
+}
+[e $U 3  ]
+"47
+[; ;SevenSegment_unportablePart.c: 47:     else
+[e :U 2 ]
+"48
+[; ;SevenSegment_unportablePart.c: 48:     {
+{
+"50
+[; ;SevenSegment_unportablePart.c: 50:         GPIO_WriteOnPin(0u , 2u , 0u);
+[e ( _GPIO_WriteOnPin (3 , , -> -> 0 `ui `uc -> -> 2 `ui `uc -> -> 0 `ui `uc ]
+"51
+[; ;SevenSegment_unportablePart.c: 51:     }
+}
+[e :U 3 ]
+"53
+[; ;SevenSegment_unportablePart.c: 53:     if(a_Chip2 == SEVEN_SEGMENT_ENABLE_CHIP)
+[e $ ! == -> _a_Chip2 `ui -> . `E2 0 `ui 4  ]
+"54
+[; ;SevenSegment_unportablePart.c: 54:     {
+{
+"56
+[; ;SevenSegment_unportablePart.c: 56:         GPIO_SetPinDirection(0u , 3u , 0u);
+[e ( _GPIO_SetPinDirection (3 , , -> -> 0 `ui `uc -> -> 3 `ui `uc -> -> 0 `ui `uc ]
+"57
+[; ;SevenSegment_unportablePart.c: 57:         GPIO_WriteOnPin(0u , 3u , 1u);
+[e ( _GPIO_WriteOnPin (3 , , -> -> 0 `ui `uc -> -> 3 `ui `uc -> -> 1 `ui `uc ]
+"58
+[; ;SevenSegment_unportablePart.c: 58:     }
+}
+[e $U 5  ]
+"59
+[; ;SevenSegment_unportablePart.c: 59:     else
+[e :U 4 ]
+"60
+[; ;SevenSegment_unportablePart.c: 60:     {
+{
+"62
+[; ;SevenSegment_unportablePart.c: 62:         GPIO_WriteOnPin(0u , 3u , 0u);
+[e ( _GPIO_WriteOnPin (3 , , -> -> 0 `ui `uc -> -> 3 `ui `uc -> -> 0 `ui `uc ]
+"63
+[; ;SevenSegment_unportablePart.c: 63:     }
+}
+[e :U 5 ]
+"65
+[; ;SevenSegment_unportablePart.c: 65:     if(a_Chip3 == SEVEN_SEGMENT_ENABLE_CHIP)
+[e $ ! == -> _a_Chip3 `ui -> . `E2 0 `ui 6  ]
+"66
+[; ;SevenSegment_unportablePart.c: 66:     {
+{
+"68
+[; ;SevenSegment_unportablePart.c: 68:         GPIO_SetPinDirection(0u , 4u , 0u);
+[e ( _GPIO_SetPinDirection (3 , , -> -> 0 `ui `uc -> -> 4 `ui `uc -> -> 0 `ui `uc ]
+"69
+[; ;SevenSegment_unportablePart.c: 69:         GPIO_WriteOnPin(0u , 4u , 1u);
+[e ( _GPIO_WriteOnPin (3 , , -> -> 0 `ui `uc -> -> 4 `ui `uc -> -> 1 `ui `uc ]
+"70
+[; ;SevenSegment_unportablePart.c: 70:     }
+}
+[e $U 7  ]
+"71
+[; ;SevenSegment_unportablePart.c: 71:     else
+[e :U 6 ]
+"72
+[; ;SevenSegment_unportablePart.c: 72:     {
+{
+"74
+[; ;SevenSegment_unportablePart.c: 74:         GPIO_WriteOnPin(0u , 4u , 0u);
+[e ( _GPIO_WriteOnPin (3 , , -> -> 0 `ui `uc -> -> 4 `ui `uc -> -> 0 `ui `uc ]
+"75
+[; ;SevenSegment_unportablePart.c: 75:     }
+}
+[e :U 7 ]
+"77
+[; ;SevenSegment_unportablePart.c: 77:     if(a_Chip4 == SEVEN_SEGMENT_ENABLE_CHIP)
+[e $ ! == -> _a_Chip4 `ui -> . `E2 0 `ui 8  ]
+"78
+[; ;SevenSegment_unportablePart.c: 78:     {
+{
+"80
+[; ;SevenSegment_unportablePart.c: 80:         GPIO_SetPinDirection(0u , 5u , 0u);
+[e ( _GPIO_SetPinDirection (3 , , -> -> 0 `ui `uc -> -> 5 `ui `uc -> -> 0 `ui `uc ]
+"81
+[; ;SevenSegment_unportablePart.c: 81:         GPIO_WriteOnPin(0u , 5u , 1u);
+[e ( _GPIO_WriteOnPin (3 , , -> -> 0 `ui `uc -> -> 5 `ui `uc -> -> 1 `ui `uc ]
+"82
+[; ;SevenSegment_unportablePart.c: 82:     }
+}
+[e $U 9  ]
+"83
+[; ;SevenSegment_unportablePart.c: 83:     else
+[e :U 8 ]
+"84
+[; ;SevenSegment_unportablePart.c: 84:     {
+{
+"86
+[; ;SevenSegment_unportablePart.c: 86:         GPIO_WriteOnPin(0u , 5u , 0u);
+[e ( _GPIO_WriteOnPin (3 , , -> -> 0 `ui `uc -> -> 5 `ui `uc -> -> 0 `ui `uc ]
+"87
+[; ;SevenSegment_unportablePart.c: 87:     }
+}
+[e :U 9 ]
+"88
+[; ;SevenSegment_unportablePart.c: 88: }
+[e :UE 1 ]
+}

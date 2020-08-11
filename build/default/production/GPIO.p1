@@ -1,0 +1,1902 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"36 GPIO.c
+[; ;GPIO.c: 36: EnumGPIO_Status_t GPIO_SetPinDirection(uint8 a_u8port , uint8 a_u8pin , uint8 a_u8direction)
+[c E10 0 1 .. ]
+[n E10 . GPIO_CORRECT_SET GPIO_UNCORRECT_SET  ]
+"36 GPIO.c
+[; ;GPIO.c: 36: EnumGPIO_Status_t GPIO_SetPinDirection(uint8 a_u8port , uint8 a_u8pin , uint8 a_u8direction)
+[v _GPIO_SetPinDirection `(E10 ~T0 @X0 1 ef3`uc`uc`uc ]
+"37
+[; ;GPIO.c: 37: {
+{
+[e :U _GPIO_SetPinDirection ]
+"36
+[; ;GPIO.c: 36: EnumGPIO_Status_t GPIO_SetPinDirection(uint8 a_u8port , uint8 a_u8pin , uint8 a_u8direction)
+[v _a_u8port `uc ~T0 @X0 1 r1 ]
+[v _a_u8pin `uc ~T0 @X0 1 r2 ]
+[v _a_u8direction `uc ~T0 @X0 1 r3 ]
+"37
+[; ;GPIO.c: 37: {
+[f ]
+"39
+[; ;GPIO.c: 39:     EnumGPIO_Status_t retVal = GPIO_UNCORRECT_SET;
+[v _retVal `E10 ~T0 @X0 1 a ]
+[e = _retVal . `E10 1 ]
+"41
+[; ;GPIO.c: 41:     switch(a_u8port)
+[e $U 3  ]
+"42
+[; ;GPIO.c: 42:     {
+{
+"43
+[; ;GPIO.c: 43:         case 0u:
+[e :U 4 ]
+"45
+[; ;GPIO.c: 45:             if(a_u8pin <= 5u)
+[e $ ! <= -> _a_u8pin `ui -> 5 `ui 5  ]
+"46
+[; ;GPIO.c: 46:             {
+{
+"47
+[; ;GPIO.c: 47:                 if(a_u8direction == 1u)
+[e $ ! == -> _a_u8direction `ui -> 1 `ui 6  ]
+"48
+[; ;GPIO.c: 48:                 {
+{
+"49
+[; ;GPIO.c: 49:                     *(volatile uint8*)0x85 |= 1 << a_u8pin;
+[e =| *U -> -> 133 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"50
+[; ;GPIO.c: 50:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"51
+[; ;GPIO.c: 51:                 }
+}
+[e $U 7  ]
+"52
+[; ;GPIO.c: 52:                 else if(a_u8direction == 0u)
+[e :U 6 ]
+[e $ ! == -> _a_u8direction `ui -> 0 `ui 8  ]
+"53
+[; ;GPIO.c: 53:                 {
+{
+"54
+[; ;GPIO.c: 54:                     *(volatile uint8*)0x85 &= ~(1 << a_u8pin);
+[e =& *U -> -> 133 `i `*Vuc -> ~ << -> 1 `i -> _a_u8pin `i `uc ]
+"55
+[; ;GPIO.c: 55:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"56
+[; ;GPIO.c: 56:                 }
+}
+[e $U 9  ]
+"57
+[; ;GPIO.c: 57:                 else
+[e :U 8 ]
+"58
+[; ;GPIO.c: 58:                 {
+{
+"60
+[; ;GPIO.c: 60:                     retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"61
+[; ;GPIO.c: 61:                 }
+}
+[e :U 9 ]
+[e :U 7 ]
+"62
+[; ;GPIO.c: 62:             }
+}
+[e $U 10  ]
+"63
+[; ;GPIO.c: 63:             else
+[e :U 5 ]
+"64
+[; ;GPIO.c: 64:             {
+{
+"66
+[; ;GPIO.c: 66:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"67
+[; ;GPIO.c: 67:             }
+}
+[e :U 10 ]
+"68
+[; ;GPIO.c: 68:             break;
+[e $U 2  ]
+"69
+[; ;GPIO.c: 69:         case 1u:
+[e :U 11 ]
+"71
+[; ;GPIO.c: 71:             if(a_u8pin <= 7u)
+[e $ ! <= -> _a_u8pin `ui -> 7 `ui 12  ]
+"72
+[; ;GPIO.c: 72:             {
+{
+"73
+[; ;GPIO.c: 73:                 if(a_u8direction == 1u)
+[e $ ! == -> _a_u8direction `ui -> 1 `ui 13  ]
+"74
+[; ;GPIO.c: 74:                 {
+{
+"75
+[; ;GPIO.c: 75:                     *(volatile uint8*)0x86 |= 1 << a_u8pin;
+[e =| *U -> -> 134 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"76
+[; ;GPIO.c: 76:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"77
+[; ;GPIO.c: 77:                 }
+}
+[e $U 14  ]
+"78
+[; ;GPIO.c: 78:                 else if(a_u8direction == 0u)
+[e :U 13 ]
+[e $ ! == -> _a_u8direction `ui -> 0 `ui 15  ]
+"79
+[; ;GPIO.c: 79:                 {
+{
+"80
+[; ;GPIO.c: 80:                     *(volatile uint8*)0x86 &= ~(1 << a_u8pin);
+[e =& *U -> -> 134 `i `*Vuc -> ~ << -> 1 `i -> _a_u8pin `i `uc ]
+"81
+[; ;GPIO.c: 81:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"82
+[; ;GPIO.c: 82:                 }
+}
+[e $U 16  ]
+"83
+[; ;GPIO.c: 83:                 else
+[e :U 15 ]
+"84
+[; ;GPIO.c: 84:                 {
+{
+"86
+[; ;GPIO.c: 86:                     retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"87
+[; ;GPIO.c: 87:                 }
+}
+[e :U 16 ]
+[e :U 14 ]
+"88
+[; ;GPIO.c: 88:             }
+}
+[e $U 17  ]
+"89
+[; ;GPIO.c: 89:             else
+[e :U 12 ]
+"90
+[; ;GPIO.c: 90:             {
+{
+"92
+[; ;GPIO.c: 92:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"93
+[; ;GPIO.c: 93:             }
+}
+[e :U 17 ]
+"94
+[; ;GPIO.c: 94:             break;
+[e $U 2  ]
+"95
+[; ;GPIO.c: 95:         case 2u:
+[e :U 18 ]
+"97
+[; ;GPIO.c: 97:             if(a_u8pin <= 7u)
+[e $ ! <= -> _a_u8pin `ui -> 7 `ui 19  ]
+"98
+[; ;GPIO.c: 98:             {
+{
+"99
+[; ;GPIO.c: 99:                 if(a_u8direction == 1u)
+[e $ ! == -> _a_u8direction `ui -> 1 `ui 20  ]
+"100
+[; ;GPIO.c: 100:                 {
+{
+"101
+[; ;GPIO.c: 101:                     *(volatile uint8*)0x87 |= 1 << a_u8pin;
+[e =| *U -> -> 135 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"102
+[; ;GPIO.c: 102:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"103
+[; ;GPIO.c: 103:                 }
+}
+[e $U 21  ]
+"104
+[; ;GPIO.c: 104:                 else if(a_u8direction == 0u)
+[e :U 20 ]
+[e $ ! == -> _a_u8direction `ui -> 0 `ui 22  ]
+"105
+[; ;GPIO.c: 105:                 {
+{
+"106
+[; ;GPIO.c: 106:                     *(volatile uint8*)0x87 &= ~(1 << a_u8pin);
+[e =& *U -> -> 135 `i `*Vuc -> ~ << -> 1 `i -> _a_u8pin `i `uc ]
+"107
+[; ;GPIO.c: 107:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"108
+[; ;GPIO.c: 108:                 }
+}
+[e $U 23  ]
+"109
+[; ;GPIO.c: 109:                 else
+[e :U 22 ]
+"110
+[; ;GPIO.c: 110:                 {
+{
+"112
+[; ;GPIO.c: 112:                     retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"113
+[; ;GPIO.c: 113:                 }
+}
+[e :U 23 ]
+[e :U 21 ]
+"114
+[; ;GPIO.c: 114:             }
+}
+[e $U 24  ]
+"115
+[; ;GPIO.c: 115:             else
+[e :U 19 ]
+"116
+[; ;GPIO.c: 116:             {
+{
+"118
+[; ;GPIO.c: 118:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"119
+[; ;GPIO.c: 119:             }
+}
+[e :U 24 ]
+"120
+[; ;GPIO.c: 120:             break;
+[e $U 2  ]
+"121
+[; ;GPIO.c: 121:         case 3u:
+[e :U 25 ]
+"123
+[; ;GPIO.c: 123:             if(a_u8pin <= 7u)
+[e $ ! <= -> _a_u8pin `ui -> 7 `ui 26  ]
+"124
+[; ;GPIO.c: 124:             {
+{
+"125
+[; ;GPIO.c: 125:                 if(a_u8direction == 1u)
+[e $ ! == -> _a_u8direction `ui -> 1 `ui 27  ]
+"126
+[; ;GPIO.c: 126:                 {
+{
+"127
+[; ;GPIO.c: 127:                     *(volatile uint8*)0x88 |= 1 << a_u8pin;
+[e =| *U -> -> 136 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"128
+[; ;GPIO.c: 128:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"129
+[; ;GPIO.c: 129:                 }
+}
+[e $U 28  ]
+"130
+[; ;GPIO.c: 130:                 else if(a_u8direction == 0u)
+[e :U 27 ]
+[e $ ! == -> _a_u8direction `ui -> 0 `ui 29  ]
+"131
+[; ;GPIO.c: 131:                 {
+{
+"132
+[; ;GPIO.c: 132:                     *(volatile uint8*)0x88 &= ~(1 << a_u8pin);
+[e =& *U -> -> 136 `i `*Vuc -> ~ << -> 1 `i -> _a_u8pin `i `uc ]
+"133
+[; ;GPIO.c: 133:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"134
+[; ;GPIO.c: 134:                 }
+}
+[e $U 30  ]
+"135
+[; ;GPIO.c: 135:                 else
+[e :U 29 ]
+"136
+[; ;GPIO.c: 136:                 {
+{
+"138
+[; ;GPIO.c: 138:                     retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"139
+[; ;GPIO.c: 139:                 }
+}
+[e :U 30 ]
+[e :U 28 ]
+"140
+[; ;GPIO.c: 140:             }
+}
+[e $U 31  ]
+"141
+[; ;GPIO.c: 141:             else
+[e :U 26 ]
+"142
+[; ;GPIO.c: 142:             {
+{
+"144
+[; ;GPIO.c: 144:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"145
+[; ;GPIO.c: 145:             }
+}
+[e :U 31 ]
+"146
+[; ;GPIO.c: 146:             break;
+[e $U 2  ]
+"147
+[; ;GPIO.c: 147:         case 4u:
+[e :U 32 ]
+"149
+[; ;GPIO.c: 149:             if(a_u8pin < 3u)
+[e $ ! < -> _a_u8pin `ui -> 3 `ui 33  ]
+"150
+[; ;GPIO.c: 150:             {
+{
+"151
+[; ;GPIO.c: 151:                 if(a_u8direction == 1u)
+[e $ ! == -> _a_u8direction `ui -> 1 `ui 34  ]
+"152
+[; ;GPIO.c: 152:                 {
+{
+"153
+[; ;GPIO.c: 153:                     *(volatile uint8*)0x89 |= 1 << a_u8pin;
+[e =| *U -> -> 137 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"154
+[; ;GPIO.c: 154:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"155
+[; ;GPIO.c: 155:                 }
+}
+[e $U 35  ]
+"156
+[; ;GPIO.c: 156:                 else if(a_u8direction == 0u)
+[e :U 34 ]
+[e $ ! == -> _a_u8direction `ui -> 0 `ui 36  ]
+"157
+[; ;GPIO.c: 157:                 {
+{
+"158
+[; ;GPIO.c: 158:                     *(volatile uint8*)0x89 &= ~(1 << a_u8pin);
+[e =& *U -> -> 137 `i `*Vuc -> ~ << -> 1 `i -> _a_u8pin `i `uc ]
+"159
+[; ;GPIO.c: 159:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"160
+[; ;GPIO.c: 160:                 }
+}
+[e $U 37  ]
+"161
+[; ;GPIO.c: 161:                 else
+[e :U 36 ]
+"162
+[; ;GPIO.c: 162:                 {
+{
+"164
+[; ;GPIO.c: 164:                     retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"165
+[; ;GPIO.c: 165:                 }
+}
+[e :U 37 ]
+[e :U 35 ]
+"166
+[; ;GPIO.c: 166:             }
+}
+[e $U 38  ]
+"167
+[; ;GPIO.c: 167:             else
+[e :U 33 ]
+"168
+[; ;GPIO.c: 168:             {
+{
+"170
+[; ;GPIO.c: 170:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"171
+[; ;GPIO.c: 171:             }
+}
+[e :U 38 ]
+"172
+[; ;GPIO.c: 172:             break;
+[e $U 2  ]
+"173
+[; ;GPIO.c: 173:         default:
+[e :U 39 ]
+"175
+[; ;GPIO.c: 175:             retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"176
+[; ;GPIO.c: 176:             break;
+[e $U 2  ]
+"177
+[; ;GPIO.c: 177:     }
+}
+[e $U 2  ]
+[e :U 3 ]
+[e [\ -> _a_u8port `i , $ -> -> 0 `ui `i 4
+ , $ -> -> 1 `ui `i 11
+ , $ -> -> 2 `ui `i 18
+ , $ -> -> 3 `ui `i 25
+ , $ -> -> 4 `ui `i 32
+ 39 ]
+[e :U 2 ]
+"178
+[; ;GPIO.c: 178:     return retVal;
+[e ) _retVal ]
+[e $UE 1  ]
+"179
+[; ;GPIO.c: 179: }
+[e :UE 1 ]
+}
+"193
+[; ;GPIO.c: 193: EnumGPIO_Status_t GPIO_SetPortDirection(uint8 a_u8port , uint8 a_u8direction)
+[v _GPIO_SetPortDirection `(E10 ~T0 @X0 1 ef2`uc`uc ]
+"194
+[; ;GPIO.c: 194: {
+{
+[e :U _GPIO_SetPortDirection ]
+"193
+[; ;GPIO.c: 193: EnumGPIO_Status_t GPIO_SetPortDirection(uint8 a_u8port , uint8 a_u8direction)
+[v _a_u8port `uc ~T0 @X0 1 r1 ]
+[v _a_u8direction `uc ~T0 @X0 1 r2 ]
+"194
+[; ;GPIO.c: 194: {
+[f ]
+"196
+[; ;GPIO.c: 196:     EnumGPIO_Status_t retVal = GPIO_UNCORRECT_SET;
+[v _retVal `E10 ~T0 @X0 1 a ]
+[e = _retVal . `E10 1 ]
+"198
+[; ;GPIO.c: 198:     switch(a_u8port)
+[e $U 42  ]
+"199
+[; ;GPIO.c: 199:     {
+{
+"200
+[; ;GPIO.c: 200:         case 0u:
+[e :U 43 ]
+"201
+[; ;GPIO.c: 201:             if(a_u8direction == 1u)
+[e $ ! == -> _a_u8direction `ui -> 1 `ui 44  ]
+"202
+[; ;GPIO.c: 202:             {
+{
+"203
+[; ;GPIO.c: 203:                 *(volatile uint8*)0x85 |= 0x3F;
+[e =| *U -> -> 133 `i `*Vuc -> -> 63 `i `uc ]
+"204
+[; ;GPIO.c: 204:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"205
+[; ;GPIO.c: 205:             }
+}
+[e $U 45  ]
+"206
+[; ;GPIO.c: 206:             else if(a_u8direction == 0u)
+[e :U 44 ]
+[e $ ! == -> _a_u8direction `ui -> 0 `ui 46  ]
+"207
+[; ;GPIO.c: 207:             {
+{
+"208
+[; ;GPIO.c: 208:                 *(volatile uint8*)0x85 &= 0xC0;
+[e =& *U -> -> 133 `i `*Vuc -> -> 192 `i `uc ]
+"209
+[; ;GPIO.c: 209:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"210
+[; ;GPIO.c: 210:             }
+}
+[e $U 47  ]
+"211
+[; ;GPIO.c: 211:             else
+[e :U 46 ]
+"212
+[; ;GPIO.c: 212:             {
+{
+"214
+[; ;GPIO.c: 214:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"215
+[; ;GPIO.c: 215:             }
+}
+[e :U 47 ]
+[e :U 45 ]
+"216
+[; ;GPIO.c: 216:             break;
+[e $U 41  ]
+"217
+[; ;GPIO.c: 217:         case 1u:
+[e :U 48 ]
+"218
+[; ;GPIO.c: 218:             if(a_u8direction == 1u)
+[e $ ! == -> _a_u8direction `ui -> 1 `ui 49  ]
+"219
+[; ;GPIO.c: 219:             {
+{
+"220
+[; ;GPIO.c: 220:                 *(volatile uint8*)0x86 |= 0xFF;
+[e =| *U -> -> 134 `i `*Vuc -> -> 255 `i `uc ]
+"221
+[; ;GPIO.c: 221:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"222
+[; ;GPIO.c: 222:             }
+}
+[e $U 50  ]
+"223
+[; ;GPIO.c: 223:             else if(a_u8direction == 0u)
+[e :U 49 ]
+[e $ ! == -> _a_u8direction `ui -> 0 `ui 51  ]
+"224
+[; ;GPIO.c: 224:             {
+{
+"225
+[; ;GPIO.c: 225:                 *(volatile uint8*)0x85 &= 0x00;
+[e =& *U -> -> 133 `i `*Vuc -> -> 0 `i `uc ]
+"226
+[; ;GPIO.c: 226:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"227
+[; ;GPIO.c: 227:             }
+}
+[e $U 52  ]
+"228
+[; ;GPIO.c: 228:             else
+[e :U 51 ]
+"229
+[; ;GPIO.c: 229:             {
+{
+"231
+[; ;GPIO.c: 231:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"232
+[; ;GPIO.c: 232:             }
+}
+[e :U 52 ]
+[e :U 50 ]
+"233
+[; ;GPIO.c: 233:             break;
+[e $U 41  ]
+"234
+[; ;GPIO.c: 234:         case 2u:
+[e :U 53 ]
+"235
+[; ;GPIO.c: 235:             if(a_u8direction == 1u)
+[e $ ! == -> _a_u8direction `ui -> 1 `ui 54  ]
+"236
+[; ;GPIO.c: 236:             {
+{
+"237
+[; ;GPIO.c: 237:                 *(volatile uint8*)0x87 |= 0xFF;
+[e =| *U -> -> 135 `i `*Vuc -> -> 255 `i `uc ]
+"238
+[; ;GPIO.c: 238:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"239
+[; ;GPIO.c: 239:             }
+}
+[e $U 55  ]
+"240
+[; ;GPIO.c: 240:             else if(a_u8direction == 0u)
+[e :U 54 ]
+[e $ ! == -> _a_u8direction `ui -> 0 `ui 56  ]
+"241
+[; ;GPIO.c: 241:             {
+{
+"242
+[; ;GPIO.c: 242:                 *(volatile uint8*)0x87 &= 0x00;
+[e =& *U -> -> 135 `i `*Vuc -> -> 0 `i `uc ]
+"243
+[; ;GPIO.c: 243:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"244
+[; ;GPIO.c: 244:             }
+}
+[e $U 57  ]
+"245
+[; ;GPIO.c: 245:             else
+[e :U 56 ]
+"246
+[; ;GPIO.c: 246:             {
+{
+"248
+[; ;GPIO.c: 248:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"249
+[; ;GPIO.c: 249:             }
+}
+[e :U 57 ]
+[e :U 55 ]
+"250
+[; ;GPIO.c: 250:             break;
+[e $U 41  ]
+"251
+[; ;GPIO.c: 251:         case 3u:
+[e :U 58 ]
+"252
+[; ;GPIO.c: 252:             if(a_u8direction == 1u)
+[e $ ! == -> _a_u8direction `ui -> 1 `ui 59  ]
+"253
+[; ;GPIO.c: 253:             {
+{
+"254
+[; ;GPIO.c: 254:                 *(volatile uint8*)0x88 |= 0xFF;
+[e =| *U -> -> 136 `i `*Vuc -> -> 255 `i `uc ]
+"255
+[; ;GPIO.c: 255:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"256
+[; ;GPIO.c: 256:             }
+}
+[e $U 60  ]
+"257
+[; ;GPIO.c: 257:             else if(a_u8direction == 0u)
+[e :U 59 ]
+[e $ ! == -> _a_u8direction `ui -> 0 `ui 61  ]
+"258
+[; ;GPIO.c: 258:             {
+{
+"259
+[; ;GPIO.c: 259:                 *(volatile uint8*)0x88 &= 0x00;
+[e =& *U -> -> 136 `i `*Vuc -> -> 0 `i `uc ]
+"260
+[; ;GPIO.c: 260:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"261
+[; ;GPIO.c: 261:             }
+}
+[e $U 62  ]
+"262
+[; ;GPIO.c: 262:             else
+[e :U 61 ]
+"263
+[; ;GPIO.c: 263:             {
+{
+"265
+[; ;GPIO.c: 265:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"266
+[; ;GPIO.c: 266:             }
+}
+[e :U 62 ]
+[e :U 60 ]
+"267
+[; ;GPIO.c: 267:             break;
+[e $U 41  ]
+"268
+[; ;GPIO.c: 268:         case 4u:
+[e :U 63 ]
+"269
+[; ;GPIO.c: 269:             if(a_u8direction == 1u)
+[e $ ! == -> _a_u8direction `ui -> 1 `ui 64  ]
+"270
+[; ;GPIO.c: 270:             {
+{
+"271
+[; ;GPIO.c: 271:                 *(volatile uint8*)0x89 |= 0x08;
+[e =| *U -> -> 137 `i `*Vuc -> -> 8 `i `uc ]
+"272
+[; ;GPIO.c: 272:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"273
+[; ;GPIO.c: 273:             }
+}
+[e $U 65  ]
+"274
+[; ;GPIO.c: 274:             else if(a_u8direction == 0u)
+[e :U 64 ]
+[e $ ! == -> _a_u8direction `ui -> 0 `ui 66  ]
+"275
+[; ;GPIO.c: 275:             {
+{
+"276
+[; ;GPIO.c: 276:                 *(volatile uint8*)0x89 &= 0xF8;
+[e =& *U -> -> 137 `i `*Vuc -> -> 248 `i `uc ]
+"277
+[; ;GPIO.c: 277:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"278
+[; ;GPIO.c: 278:             }
+}
+[e $U 67  ]
+"279
+[; ;GPIO.c: 279:             else
+[e :U 66 ]
+"280
+[; ;GPIO.c: 280:             {
+{
+"282
+[; ;GPIO.c: 282:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"283
+[; ;GPIO.c: 283:             }
+}
+[e :U 67 ]
+[e :U 65 ]
+"284
+[; ;GPIO.c: 284:             break;
+[e $U 41  ]
+"285
+[; ;GPIO.c: 285:         default:
+[e :U 68 ]
+"287
+[; ;GPIO.c: 287:             retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"288
+[; ;GPIO.c: 288:             break;
+[e $U 41  ]
+"289
+[; ;GPIO.c: 289:     }
+}
+[e $U 41  ]
+[e :U 42 ]
+[e [\ -> _a_u8port `i , $ -> -> 0 `ui `i 43
+ , $ -> -> 1 `ui `i 48
+ , $ -> -> 2 `ui `i 53
+ , $ -> -> 3 `ui `i 58
+ , $ -> -> 4 `ui `i 63
+ 68 ]
+[e :U 41 ]
+"290
+[; ;GPIO.c: 290:     return retVal;
+[e ) _retVal ]
+[e $UE 40  ]
+"291
+[; ;GPIO.c: 291: }
+[e :UE 40 ]
+}
+"306
+[; ;GPIO.c: 306: EnumGPIO_Status_t GPIO_WriteOnPin(uint8 a_u8port , uint8 a_u8pin , uint8 a_u8value)
+[v _GPIO_WriteOnPin `(E10 ~T0 @X0 1 ef3`uc`uc`uc ]
+"307
+[; ;GPIO.c: 307: {
+{
+[e :U _GPIO_WriteOnPin ]
+"306
+[; ;GPIO.c: 306: EnumGPIO_Status_t GPIO_WriteOnPin(uint8 a_u8port , uint8 a_u8pin , uint8 a_u8value)
+[v _a_u8port `uc ~T0 @X0 1 r1 ]
+[v _a_u8pin `uc ~T0 @X0 1 r2 ]
+[v _a_u8value `uc ~T0 @X0 1 r3 ]
+"307
+[; ;GPIO.c: 307: {
+[f ]
+"309
+[; ;GPIO.c: 309:     EnumGPIO_Status_t retVal = GPIO_UNCORRECT_SET;
+[v _retVal `E10 ~T0 @X0 1 a ]
+[e = _retVal . `E10 1 ]
+"311
+[; ;GPIO.c: 311:     switch(a_u8port)
+[e $U 71  ]
+"312
+[; ;GPIO.c: 312:     {
+{
+"313
+[; ;GPIO.c: 313:         case 0u:
+[e :U 72 ]
+"315
+[; ;GPIO.c: 315:             if(a_u8pin <= 5u)
+[e $ ! <= -> _a_u8pin `ui -> 5 `ui 73  ]
+"316
+[; ;GPIO.c: 316:             {
+{
+"317
+[; ;GPIO.c: 317:                 if(a_u8value == 1u)
+[e $ ! == -> _a_u8value `ui -> 1 `ui 74  ]
+"318
+[; ;GPIO.c: 318:                 {
+{
+"319
+[; ;GPIO.c: 319:                     *(volatile uint8*)0x05 |= 1 << a_u8pin;
+[e =| *U -> -> 5 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"320
+[; ;GPIO.c: 320:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"321
+[; ;GPIO.c: 321:                 }
+}
+[e $U 75  ]
+"322
+[; ;GPIO.c: 322:                 else if(a_u8value == 0u)
+[e :U 74 ]
+[e $ ! == -> _a_u8value `ui -> 0 `ui 76  ]
+"323
+[; ;GPIO.c: 323:                 {
+{
+"324
+[; ;GPIO.c: 324:                     *(volatile uint8*)0x05 &= ~(1 << a_u8pin);
+[e =& *U -> -> 5 `i `*Vuc -> ~ << -> 1 `i -> _a_u8pin `i `uc ]
+"325
+[; ;GPIO.c: 325:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"326
+[; ;GPIO.c: 326:                 }
+}
+[e $U 77  ]
+"327
+[; ;GPIO.c: 327:                 else
+[e :U 76 ]
+"328
+[; ;GPIO.c: 328:                 {
+{
+"330
+[; ;GPIO.c: 330:                     retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"331
+[; ;GPIO.c: 331:                 }
+}
+[e :U 77 ]
+[e :U 75 ]
+"332
+[; ;GPIO.c: 332:             }
+}
+[e $U 78  ]
+"333
+[; ;GPIO.c: 333:             else
+[e :U 73 ]
+"334
+[; ;GPIO.c: 334:             {
+{
+"336
+[; ;GPIO.c: 336:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"337
+[; ;GPIO.c: 337:             }
+}
+[e :U 78 ]
+"338
+[; ;GPIO.c: 338:             break;
+[e $U 70  ]
+"339
+[; ;GPIO.c: 339:         case 1u:
+[e :U 79 ]
+"341
+[; ;GPIO.c: 341:             if(a_u8pin <= 7u)
+[e $ ! <= -> _a_u8pin `ui -> 7 `ui 80  ]
+"342
+[; ;GPIO.c: 342:             {
+{
+"343
+[; ;GPIO.c: 343:                 if(a_u8value == 1u)
+[e $ ! == -> _a_u8value `ui -> 1 `ui 81  ]
+"344
+[; ;GPIO.c: 344:                 {
+{
+"345
+[; ;GPIO.c: 345:                     *(volatile uint8*)0x06 |= 1 << a_u8pin;
+[e =| *U -> -> 6 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"346
+[; ;GPIO.c: 346:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"347
+[; ;GPIO.c: 347:                 }
+}
+[e $U 82  ]
+"348
+[; ;GPIO.c: 348:                 else if(a_u8value == 0u)
+[e :U 81 ]
+[e $ ! == -> _a_u8value `ui -> 0 `ui 83  ]
+"349
+[; ;GPIO.c: 349:                 {
+{
+"350
+[; ;GPIO.c: 350:                     *(volatile uint8*)0x06 &= ~(1 << a_u8pin);
+[e =& *U -> -> 6 `i `*Vuc -> ~ << -> 1 `i -> _a_u8pin `i `uc ]
+"351
+[; ;GPIO.c: 351:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"352
+[; ;GPIO.c: 352:                 }
+}
+[e $U 84  ]
+"353
+[; ;GPIO.c: 353:                 else
+[e :U 83 ]
+"354
+[; ;GPIO.c: 354:                 {
+{
+"356
+[; ;GPIO.c: 356:                     retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"357
+[; ;GPIO.c: 357:                 }
+}
+[e :U 84 ]
+[e :U 82 ]
+"358
+[; ;GPIO.c: 358:             }
+}
+[e $U 85  ]
+"359
+[; ;GPIO.c: 359:             else
+[e :U 80 ]
+"360
+[; ;GPIO.c: 360:             {
+{
+"362
+[; ;GPIO.c: 362:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"363
+[; ;GPIO.c: 363:             }
+}
+[e :U 85 ]
+"364
+[; ;GPIO.c: 364:             break;
+[e $U 70  ]
+"365
+[; ;GPIO.c: 365:         case 2u:
+[e :U 86 ]
+"367
+[; ;GPIO.c: 367:             if(a_u8pin <= 7u)
+[e $ ! <= -> _a_u8pin `ui -> 7 `ui 87  ]
+"368
+[; ;GPIO.c: 368:             {
+{
+"369
+[; ;GPIO.c: 369:                 if(a_u8value == 1u)
+[e $ ! == -> _a_u8value `ui -> 1 `ui 88  ]
+"370
+[; ;GPIO.c: 370:                 {
+{
+"371
+[; ;GPIO.c: 371:                     *(volatile uint8*)0x07 |= 1 << a_u8pin;
+[e =| *U -> -> 7 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"372
+[; ;GPIO.c: 372:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"373
+[; ;GPIO.c: 373:                 }
+}
+[e $U 89  ]
+"374
+[; ;GPIO.c: 374:                 else if(a_u8value == 0u)
+[e :U 88 ]
+[e $ ! == -> _a_u8value `ui -> 0 `ui 90  ]
+"375
+[; ;GPIO.c: 375:                 {
+{
+"376
+[; ;GPIO.c: 376:                     *(volatile uint8*)0x07 &= ~(1 << a_u8pin);
+[e =& *U -> -> 7 `i `*Vuc -> ~ << -> 1 `i -> _a_u8pin `i `uc ]
+"377
+[; ;GPIO.c: 377:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"378
+[; ;GPIO.c: 378:                 }
+}
+[e $U 91  ]
+"379
+[; ;GPIO.c: 379:                 else
+[e :U 90 ]
+"380
+[; ;GPIO.c: 380:                 {
+{
+"382
+[; ;GPIO.c: 382:                     retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"383
+[; ;GPIO.c: 383:                 }
+}
+[e :U 91 ]
+[e :U 89 ]
+"384
+[; ;GPIO.c: 384:             }
+}
+[e $U 92  ]
+"385
+[; ;GPIO.c: 385:             else
+[e :U 87 ]
+"386
+[; ;GPIO.c: 386:             {
+{
+"388
+[; ;GPIO.c: 388:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"389
+[; ;GPIO.c: 389:             }
+}
+[e :U 92 ]
+"390
+[; ;GPIO.c: 390:             break;
+[e $U 70  ]
+"391
+[; ;GPIO.c: 391:         case 3u:
+[e :U 93 ]
+"393
+[; ;GPIO.c: 393:             if(a_u8pin <= 7u)
+[e $ ! <= -> _a_u8pin `ui -> 7 `ui 94  ]
+"394
+[; ;GPIO.c: 394:             {
+{
+"395
+[; ;GPIO.c: 395:                 if(a_u8value == 1u)
+[e $ ! == -> _a_u8value `ui -> 1 `ui 95  ]
+"396
+[; ;GPIO.c: 396:                 {
+{
+"397
+[; ;GPIO.c: 397:                     *(volatile uint8*)0x08 |= 1 << a_u8pin;
+[e =| *U -> -> 8 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"398
+[; ;GPIO.c: 398:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"399
+[; ;GPIO.c: 399:                 }
+}
+[e $U 96  ]
+"400
+[; ;GPIO.c: 400:                 else if(a_u8value == 0u)
+[e :U 95 ]
+[e $ ! == -> _a_u8value `ui -> 0 `ui 97  ]
+"401
+[; ;GPIO.c: 401:                 {
+{
+"402
+[; ;GPIO.c: 402:                     *(volatile uint8*)0x08 &= ~(1 << a_u8pin);
+[e =& *U -> -> 8 `i `*Vuc -> ~ << -> 1 `i -> _a_u8pin `i `uc ]
+"403
+[; ;GPIO.c: 403:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"404
+[; ;GPIO.c: 404:                 }
+}
+[e $U 98  ]
+"405
+[; ;GPIO.c: 405:                 else
+[e :U 97 ]
+"406
+[; ;GPIO.c: 406:                 {
+{
+"408
+[; ;GPIO.c: 408:                     retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"409
+[; ;GPIO.c: 409:                 }
+}
+[e :U 98 ]
+[e :U 96 ]
+"410
+[; ;GPIO.c: 410:             }
+}
+[e $U 99  ]
+"411
+[; ;GPIO.c: 411:             else
+[e :U 94 ]
+"412
+[; ;GPIO.c: 412:             {
+{
+"414
+[; ;GPIO.c: 414:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"415
+[; ;GPIO.c: 415:             }
+}
+[e :U 99 ]
+"416
+[; ;GPIO.c: 416:             break;
+[e $U 70  ]
+"417
+[; ;GPIO.c: 417:         case 4u:
+[e :U 100 ]
+"419
+[; ;GPIO.c: 419:             if(a_u8pin < 3u)
+[e $ ! < -> _a_u8pin `ui -> 3 `ui 101  ]
+"420
+[; ;GPIO.c: 420:             {
+{
+"421
+[; ;GPIO.c: 421:                 if(a_u8value == 1u)
+[e $ ! == -> _a_u8value `ui -> 1 `ui 102  ]
+"422
+[; ;GPIO.c: 422:                 {
+{
+"423
+[; ;GPIO.c: 423:                     *(volatile uint8*)0x09 |= 1 << a_u8pin;
+[e =| *U -> -> 9 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"424
+[; ;GPIO.c: 424:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"425
+[; ;GPIO.c: 425:                 }
+}
+[e $U 103  ]
+"426
+[; ;GPIO.c: 426:                 else if(a_u8value == 0u)
+[e :U 102 ]
+[e $ ! == -> _a_u8value `ui -> 0 `ui 104  ]
+"427
+[; ;GPIO.c: 427:                 {
+{
+"428
+[; ;GPIO.c: 428:                     *(volatile uint8*)0x09 &= ~(1 << a_u8pin);
+[e =& *U -> -> 9 `i `*Vuc -> ~ << -> 1 `i -> _a_u8pin `i `uc ]
+"429
+[; ;GPIO.c: 429:                     retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"430
+[; ;GPIO.c: 430:                 }
+}
+[e $U 105  ]
+"431
+[; ;GPIO.c: 431:                 else
+[e :U 104 ]
+"432
+[; ;GPIO.c: 432:                 {
+{
+"434
+[; ;GPIO.c: 434:                     retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"435
+[; ;GPIO.c: 435:                 }
+}
+[e :U 105 ]
+[e :U 103 ]
+"436
+[; ;GPIO.c: 436:             }
+}
+[e $U 106  ]
+"437
+[; ;GPIO.c: 437:             else
+[e :U 101 ]
+"438
+[; ;GPIO.c: 438:             {
+{
+"440
+[; ;GPIO.c: 440:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"441
+[; ;GPIO.c: 441:             }
+}
+[e :U 106 ]
+"442
+[; ;GPIO.c: 442:             break;
+[e $U 70  ]
+"443
+[; ;GPIO.c: 443:         default:
+[e :U 107 ]
+"445
+[; ;GPIO.c: 445:             retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"446
+[; ;GPIO.c: 446:             break;
+[e $U 70  ]
+"447
+[; ;GPIO.c: 447:     }
+}
+[e $U 70  ]
+[e :U 71 ]
+[e [\ -> _a_u8port `i , $ -> -> 0 `ui `i 72
+ , $ -> -> 1 `ui `i 79
+ , $ -> -> 2 `ui `i 86
+ , $ -> -> 3 `ui `i 93
+ , $ -> -> 4 `ui `i 100
+ 107 ]
+[e :U 70 ]
+"448
+[; ;GPIO.c: 448:     return retVal;
+[e ) _retVal ]
+[e $UE 69  ]
+"449
+[; ;GPIO.c: 449: }
+[e :UE 69 ]
+}
+"463
+[; ;GPIO.c: 463: EnumGPIO_Status_t GPIO_WriteOnPort(uint8 a_u8port , uint8 a_u8value)
+[v _GPIO_WriteOnPort `(E10 ~T0 @X0 1 ef2`uc`uc ]
+"464
+[; ;GPIO.c: 464: {
+{
+[e :U _GPIO_WriteOnPort ]
+"463
+[; ;GPIO.c: 463: EnumGPIO_Status_t GPIO_WriteOnPort(uint8 a_u8port , uint8 a_u8value)
+[v _a_u8port `uc ~T0 @X0 1 r1 ]
+[v _a_u8value `uc ~T0 @X0 1 r2 ]
+"464
+[; ;GPIO.c: 464: {
+[f ]
+"466
+[; ;GPIO.c: 466:     EnumGPIO_Status_t retVal = GPIO_UNCORRECT_SET;
+[v _retVal `E10 ~T0 @X0 1 a ]
+[e = _retVal . `E10 1 ]
+"468
+[; ;GPIO.c: 468:     switch(a_u8port)
+[e $U 110  ]
+"469
+[; ;GPIO.c: 469:     {
+{
+"470
+[; ;GPIO.c: 470:         case 0u:
+[e :U 111 ]
+"471
+[; ;GPIO.c: 471:             *(volatile uint8*)0x05 &= 0x30;
+[e =& *U -> -> 5 `i `*Vuc -> -> 48 `i `uc ]
+"472
+[; ;GPIO.c: 472:             *(volatile uint8*)0x05 |= (0x3F & a_u8value);
+[e =| *U -> -> 5 `i `*Vuc -> & -> 63 `i -> _a_u8value `i `uc ]
+"473
+[; ;GPIO.c: 473:             break;
+[e $U 109  ]
+"474
+[; ;GPIO.c: 474:         case 1u:
+[e :U 112 ]
+"475
+[; ;GPIO.c: 475:             *(volatile uint8*)0x06 &= 0x00;
+[e =& *U -> -> 6 `i `*Vuc -> -> 0 `i `uc ]
+"476
+[; ;GPIO.c: 476:             *(volatile uint8*)0x06 |= a_u8value;
+[e =| *U -> -> 6 `i `*Vuc -> _a_u8value `uc ]
+"477
+[; ;GPIO.c: 477:             break;
+[e $U 109  ]
+"478
+[; ;GPIO.c: 478:         case 2u:
+[e :U 113 ]
+"479
+[; ;GPIO.c: 479:             *(volatile uint8*)0x07 &= 0x00;
+[e =& *U -> -> 7 `i `*Vuc -> -> 0 `i `uc ]
+"480
+[; ;GPIO.c: 480:             *(volatile uint8*)0x07 |= a_u8value;
+[e =| *U -> -> 7 `i `*Vuc -> _a_u8value `uc ]
+"481
+[; ;GPIO.c: 481:             break;
+[e $U 109  ]
+"482
+[; ;GPIO.c: 482:         case 3u:
+[e :U 114 ]
+"483
+[; ;GPIO.c: 483:             *(volatile uint8*)0x08 &= 0x00;
+[e =& *U -> -> 8 `i `*Vuc -> -> 0 `i `uc ]
+"484
+[; ;GPIO.c: 484:             *(volatile uint8*)0x08 |= a_u8value;
+[e =| *U -> -> 8 `i `*Vuc -> _a_u8value `uc ]
+"485
+[; ;GPIO.c: 485:             break;
+[e $U 109  ]
+"486
+[; ;GPIO.c: 486:         case 4u:
+[e :U 115 ]
+"487
+[; ;GPIO.c: 487:             *(volatile uint8*)0x09 &= 0xF8;
+[e =& *U -> -> 9 `i `*Vuc -> -> 248 `i `uc ]
+"488
+[; ;GPIO.c: 488:             *(volatile uint8*)0x09 |= (a_u8value & 0x07);
+[e =| *U -> -> 9 `i `*Vuc -> & -> _a_u8value `i -> 7 `i `uc ]
+"489
+[; ;GPIO.c: 489:             break;
+[e $U 109  ]
+"490
+[; ;GPIO.c: 490:         default:
+[e :U 116 ]
+"492
+[; ;GPIO.c: 492:             retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"493
+[; ;GPIO.c: 493:             break;
+[e $U 109  ]
+"494
+[; ;GPIO.c: 494:     }
+}
+[e $U 109  ]
+[e :U 110 ]
+[e [\ -> _a_u8port `i , $ -> -> 0 `ui `i 111
+ , $ -> -> 1 `ui `i 112
+ , $ -> -> 2 `ui `i 113
+ , $ -> -> 3 `ui `i 114
+ , $ -> -> 4 `ui `i 115
+ 116 ]
+[e :U 109 ]
+"495
+[; ;GPIO.c: 495:     return retVal;
+[e ) _retVal ]
+[e $UE 108  ]
+"496
+[; ;GPIO.c: 496: }
+[e :UE 108 ]
+}
+"510
+[; ;GPIO.c: 510: uint8 GPIO_ReadFromPin(uint8 a_u8port , uint8 a_u8pin)
+[v _GPIO_ReadFromPin `(uc ~T0 @X0 1 ef2`uc`uc ]
+"511
+[; ;GPIO.c: 511: {
+{
+[e :U _GPIO_ReadFromPin ]
+"510
+[; ;GPIO.c: 510: uint8 GPIO_ReadFromPin(uint8 a_u8port , uint8 a_u8pin)
+[v _a_u8port `uc ~T0 @X0 1 r1 ]
+[v _a_u8pin `uc ~T0 @X0 1 r2 ]
+"511
+[; ;GPIO.c: 511: {
+[f ]
+"512
+[; ;GPIO.c: 512:     uint8 retVal = 0xFF;
+[v _retVal `uc ~T0 @X0 1 a ]
+[e = _retVal -> -> 255 `i `uc ]
+"514
+[; ;GPIO.c: 514:     switch(a_u8port)
+[e $U 119  ]
+"515
+[; ;GPIO.c: 515:     {
+{
+"516
+[; ;GPIO.c: 516:         case 0u:
+[e :U 120 ]
+"517
+[; ;GPIO.c: 517:             retVal = ((*(volatile uint8*)0x05 >> a_u8pin) & 0x01);
+[e = _retVal -> & >> -> *U -> -> 5 `i `*Vuc `i -> _a_u8pin `i -> 1 `i `uc ]
+"518
+[; ;GPIO.c: 518:             break;
+[e $U 118  ]
+"519
+[; ;GPIO.c: 519:         case 1u:
+[e :U 121 ]
+"520
+[; ;GPIO.c: 520:             retVal = ((*(volatile uint8*)0x06 >> a_u8pin) & 0x01);
+[e = _retVal -> & >> -> *U -> -> 6 `i `*Vuc `i -> _a_u8pin `i -> 1 `i `uc ]
+"521
+[; ;GPIO.c: 521:             break;
+[e $U 118  ]
+"522
+[; ;GPIO.c: 522:         case 2u:
+[e :U 122 ]
+"523
+[; ;GPIO.c: 523:             retVal = ((*(volatile uint8*)0x07 >> a_u8pin) & 0x01);
+[e = _retVal -> & >> -> *U -> -> 7 `i `*Vuc `i -> _a_u8pin `i -> 1 `i `uc ]
+"524
+[; ;GPIO.c: 524:             break;
+[e $U 118  ]
+"525
+[; ;GPIO.c: 525:         case 3u:
+[e :U 123 ]
+"526
+[; ;GPIO.c: 526:             retVal = ((*(volatile uint8*)0x08 >> a_u8pin) & 0x01);
+[e = _retVal -> & >> -> *U -> -> 8 `i `*Vuc `i -> _a_u8pin `i -> 1 `i `uc ]
+"527
+[; ;GPIO.c: 527:             break;
+[e $U 118  ]
+"528
+[; ;GPIO.c: 528:         case 4u:
+[e :U 124 ]
+"529
+[; ;GPIO.c: 529:             retVal = ((*(volatile uint8*)0x09 >> a_u8pin) & 0x01);
+[e = _retVal -> & >> -> *U -> -> 9 `i `*Vuc `i -> _a_u8pin `i -> 1 `i `uc ]
+"530
+[; ;GPIO.c: 530:             break;
+[e $U 118  ]
+"531
+[; ;GPIO.c: 531:         default:
+[e :U 125 ]
+"533
+[; ;GPIO.c: 533:             break;
+[e $U 118  ]
+"534
+[; ;GPIO.c: 534:     }
+}
+[e $U 118  ]
+[e :U 119 ]
+[e [\ -> _a_u8port `i , $ -> -> 0 `ui `i 120
+ , $ -> -> 1 `ui `i 121
+ , $ -> -> 2 `ui `i 122
+ , $ -> -> 3 `ui `i 123
+ , $ -> -> 4 `ui `i 124
+ 125 ]
+[e :U 118 ]
+"535
+[; ;GPIO.c: 535:     return retVal;
+[e ) _retVal ]
+[e $UE 117  ]
+"536
+[; ;GPIO.c: 536: }
+[e :UE 117 ]
+}
+"549
+[; ;GPIO.c: 549: uint8 GPIO_ReadFromPort(uint8 a_u8port)
+[v _GPIO_ReadFromPort `(uc ~T0 @X0 1 ef1`uc ]
+"550
+[; ;GPIO.c: 550: {
+{
+[e :U _GPIO_ReadFromPort ]
+"549
+[; ;GPIO.c: 549: uint8 GPIO_ReadFromPort(uint8 a_u8port)
+[v _a_u8port `uc ~T0 @X0 1 r1 ]
+"550
+[; ;GPIO.c: 550: {
+[f ]
+"551
+[; ;GPIO.c: 551:     uint8 retVal = 0x00;
+[v _retVal `uc ~T0 @X0 1 a ]
+[e = _retVal -> -> 0 `i `uc ]
+"553
+[; ;GPIO.c: 553:     switch(a_u8port)
+[e $U 128  ]
+"554
+[; ;GPIO.c: 554:     {
+{
+"555
+[; ;GPIO.c: 555:         case 0u:
+[e :U 129 ]
+"556
+[; ;GPIO.c: 556:             retVal = (*(volatile uint8*)0x05 & 0xFF);
+[e = _retVal -> & -> *U -> -> 5 `i `*Vuc `i -> 255 `i `uc ]
+"557
+[; ;GPIO.c: 557:             break;
+[e $U 127  ]
+"558
+[; ;GPIO.c: 558:         case 1u:
+[e :U 130 ]
+"559
+[; ;GPIO.c: 559:             retVal = (*(volatile uint8*)0x06 & 0xFF);
+[e = _retVal -> & -> *U -> -> 6 `i `*Vuc `i -> 255 `i `uc ]
+"560
+[; ;GPIO.c: 560:             break;
+[e $U 127  ]
+"561
+[; ;GPIO.c: 561:         case 2u:
+[e :U 131 ]
+"562
+[; ;GPIO.c: 562:             retVal = (*(volatile uint8*)0x07 & 0xFF);
+[e = _retVal -> & -> *U -> -> 7 `i `*Vuc `i -> 255 `i `uc ]
+"563
+[; ;GPIO.c: 563:             break;
+[e $U 127  ]
+"564
+[; ;GPIO.c: 564:         case 3u:
+[e :U 132 ]
+"565
+[; ;GPIO.c: 565:             retVal = (*(volatile uint8*)0x08 & 0xFF);
+[e = _retVal -> & -> *U -> -> 8 `i `*Vuc `i -> 255 `i `uc ]
+"566
+[; ;GPIO.c: 566:             break;
+[e $U 127  ]
+"567
+[; ;GPIO.c: 567:         case 4u:
+[e :U 133 ]
+"568
+[; ;GPIO.c: 568:             retVal = (*(volatile uint8*)0x09 & 0xFF);
+[e = _retVal -> & -> *U -> -> 9 `i `*Vuc `i -> 255 `i `uc ]
+"569
+[; ;GPIO.c: 569:             break;
+[e $U 127  ]
+"570
+[; ;GPIO.c: 570:         default:
+[e :U 134 ]
+"572
+[; ;GPIO.c: 572:             break;
+[e $U 127  ]
+"573
+[; ;GPIO.c: 573:     }
+}
+[e $U 127  ]
+[e :U 128 ]
+[e [\ -> _a_u8port `i , $ -> -> 0 `ui `i 129
+ , $ -> -> 1 `ui `i 130
+ , $ -> -> 2 `ui `i 131
+ , $ -> -> 3 `ui `i 132
+ , $ -> -> 4 `ui `i 133
+ 134 ]
+[e :U 127 ]
+"574
+[; ;GPIO.c: 574:     return retVal;
+[e ) _retVal ]
+[e $UE 126  ]
+"575
+[; ;GPIO.c: 575: }
+[e :UE 126 ]
+}
+"589
+[; ;GPIO.c: 589: EnumGPIO_Status_t GPIO_TogglePin(uint8 a_u8port , uint8 a_u8pin)
+[v _GPIO_TogglePin `(E10 ~T0 @X0 1 ef2`uc`uc ]
+"590
+[; ;GPIO.c: 590: {
+{
+[e :U _GPIO_TogglePin ]
+"589
+[; ;GPIO.c: 589: EnumGPIO_Status_t GPIO_TogglePin(uint8 a_u8port , uint8 a_u8pin)
+[v _a_u8port `uc ~T0 @X0 1 r1 ]
+[v _a_u8pin `uc ~T0 @X0 1 r2 ]
+"590
+[; ;GPIO.c: 590: {
+[f ]
+"592
+[; ;GPIO.c: 592:     EnumGPIO_Status_t retVal = GPIO_UNCORRECT_SET;
+[v _retVal `E10 ~T0 @X0 1 a ]
+[e = _retVal . `E10 1 ]
+"594
+[; ;GPIO.c: 594:     switch(a_u8port)
+[e $U 137  ]
+"595
+[; ;GPIO.c: 595:     {
+{
+"596
+[; ;GPIO.c: 596:         case 0u:
+[e :U 138 ]
+"598
+[; ;GPIO.c: 598:             if(a_u8pin <= 5u)
+[e $ ! <= -> _a_u8pin `ui -> 5 `ui 139  ]
+"599
+[; ;GPIO.c: 599:             {
+{
+"600
+[; ;GPIO.c: 600:                 *(volatile uint8*)0x05 ^= 1 << a_u8pin;
+[e =^ *U -> -> 5 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"601
+[; ;GPIO.c: 601:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"602
+[; ;GPIO.c: 602:             }
+}
+[e $U 140  ]
+"603
+[; ;GPIO.c: 603:             else
+[e :U 139 ]
+"604
+[; ;GPIO.c: 604:             {
+{
+"606
+[; ;GPIO.c: 606:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"607
+[; ;GPIO.c: 607:             }
+}
+[e :U 140 ]
+"608
+[; ;GPIO.c: 608:             break;
+[e $U 136  ]
+"609
+[; ;GPIO.c: 609:         case 1u:
+[e :U 141 ]
+"611
+[; ;GPIO.c: 611:             if(a_u8pin <= 7u)
+[e $ ! <= -> _a_u8pin `ui -> 7 `ui 142  ]
+"612
+[; ;GPIO.c: 612:             {
+{
+"613
+[; ;GPIO.c: 613:                 *(volatile uint8*)0x06 ^= 1 << a_u8pin;
+[e =^ *U -> -> 6 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"614
+[; ;GPIO.c: 614:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"615
+[; ;GPIO.c: 615:             }
+}
+[e $U 143  ]
+"616
+[; ;GPIO.c: 616:             else
+[e :U 142 ]
+"617
+[; ;GPIO.c: 617:             {
+{
+"619
+[; ;GPIO.c: 619:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"620
+[; ;GPIO.c: 620:             }
+}
+[e :U 143 ]
+"621
+[; ;GPIO.c: 621:             break;
+[e $U 136  ]
+"622
+[; ;GPIO.c: 622:         case 2u:
+[e :U 144 ]
+"624
+[; ;GPIO.c: 624:             if(a_u8pin <= 7u)
+[e $ ! <= -> _a_u8pin `ui -> 7 `ui 145  ]
+"625
+[; ;GPIO.c: 625:             {
+{
+"626
+[; ;GPIO.c: 626:                 *(volatile uint8*)0x07 ^= 1 << a_u8pin;
+[e =^ *U -> -> 7 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"627
+[; ;GPIO.c: 627:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"628
+[; ;GPIO.c: 628:             }
+}
+[e $U 146  ]
+"629
+[; ;GPIO.c: 629:             else
+[e :U 145 ]
+"630
+[; ;GPIO.c: 630:             {
+{
+"632
+[; ;GPIO.c: 632:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"633
+[; ;GPIO.c: 633:             }
+}
+[e :U 146 ]
+"634
+[; ;GPIO.c: 634:             break;
+[e $U 136  ]
+"635
+[; ;GPIO.c: 635:         case 3u:
+[e :U 147 ]
+"637
+[; ;GPIO.c: 637:             if(a_u8pin <= 7u)
+[e $ ! <= -> _a_u8pin `ui -> 7 `ui 148  ]
+"638
+[; ;GPIO.c: 638:             {
+{
+"639
+[; ;GPIO.c: 639:                 *(volatile uint8*)0x08 ^= 1 << a_u8pin;
+[e =^ *U -> -> 8 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"640
+[; ;GPIO.c: 640:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"641
+[; ;GPIO.c: 641:             }
+}
+[e $U 149  ]
+"642
+[; ;GPIO.c: 642:             else
+[e :U 148 ]
+"643
+[; ;GPIO.c: 643:             {
+{
+"645
+[; ;GPIO.c: 645:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"646
+[; ;GPIO.c: 646:             }
+}
+[e :U 149 ]
+"647
+[; ;GPIO.c: 647:             break;
+[e $U 136  ]
+"648
+[; ;GPIO.c: 648:         case 4u:
+[e :U 150 ]
+"650
+[; ;GPIO.c: 650:             if(a_u8pin < 3u)
+[e $ ! < -> _a_u8pin `ui -> 3 `ui 151  ]
+"651
+[; ;GPIO.c: 651:             {
+{
+"652
+[; ;GPIO.c: 652:                 *(volatile uint8*)0x09 ^= 1 << a_u8pin;
+[e =^ *U -> -> 9 `i `*Vuc -> << -> 1 `i -> _a_u8pin `i `uc ]
+"653
+[; ;GPIO.c: 653:                 retVal = GPIO_CORRECT_SET;
+[e = _retVal . `E10 0 ]
+"654
+[; ;GPIO.c: 654:             }
+}
+[e $U 152  ]
+"655
+[; ;GPIO.c: 655:             else
+[e :U 151 ]
+"656
+[; ;GPIO.c: 656:             {
+{
+"658
+[; ;GPIO.c: 658:                 retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"659
+[; ;GPIO.c: 659:             }
+}
+[e :U 152 ]
+"660
+[; ;GPIO.c: 660:             break;
+[e $U 136  ]
+"661
+[; ;GPIO.c: 661:         default:
+[e :U 153 ]
+"663
+[; ;GPIO.c: 663:             retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"664
+[; ;GPIO.c: 664:             break;
+[e $U 136  ]
+"665
+[; ;GPIO.c: 665:     }
+}
+[e $U 136  ]
+[e :U 137 ]
+[e [\ -> _a_u8port `i , $ -> -> 0 `ui `i 138
+ , $ -> -> 1 `ui `i 141
+ , $ -> -> 2 `ui `i 144
+ , $ -> -> 3 `ui `i 147
+ , $ -> -> 4 `ui `i 150
+ 153 ]
+[e :U 136 ]
+"666
+[; ;GPIO.c: 666:     return retVal;
+[e ) _retVal ]
+[e $UE 135  ]
+"667
+[; ;GPIO.c: 667: }
+[e :UE 135 ]
+}
+"680
+[; ;GPIO.c: 680: EnumGPIO_Status_t GPIO_TogglePort(uint8 a_u8port)
+[v _GPIO_TogglePort `(E10 ~T0 @X0 1 ef1`uc ]
+"681
+[; ;GPIO.c: 681: {
+{
+[e :U _GPIO_TogglePort ]
+"680
+[; ;GPIO.c: 680: EnumGPIO_Status_t GPIO_TogglePort(uint8 a_u8port)
+[v _a_u8port `uc ~T0 @X0 1 r1 ]
+"681
+[; ;GPIO.c: 681: {
+[f ]
+"683
+[; ;GPIO.c: 683:     EnumGPIO_Status_t retVal = GPIO_UNCORRECT_SET;
+[v _retVal `E10 ~T0 @X0 1 a ]
+[e = _retVal . `E10 1 ]
+"684
+[; ;GPIO.c: 684:     uint8 temp;
+[v _temp `uc ~T0 @X0 1 a ]
+"686
+[; ;GPIO.c: 686:     switch(a_u8port)
+[e $U 156  ]
+"687
+[; ;GPIO.c: 687:     {
+{
+"688
+[; ;GPIO.c: 688:         case 0u:
+[e :U 157 ]
+"689
+[; ;GPIO.c: 689:             temp = (*(volatile uint8*)0x05>>6)<<6;
+[e = _temp -> << >> -> *U -> -> 5 `i `*Vuc `i -> 6 `i -> 6 `i `uc ]
+"690
+[; ;GPIO.c: 690:             *(volatile uint8*)0x05 ^= 0xFF;
+[e =^ *U -> -> 5 `i `*Vuc -> -> 255 `i `uc ]
+"691
+[; ;GPIO.c: 691:             *(volatile uint8*)0x05 = ((*(volatile uint8*)0x05<<2)>>2) | temp;
+[e = *U -> -> 5 `i `*Vuc -> | >> << -> *U -> -> 5 `i `*Vuc `i -> 2 `i -> 2 `i -> _temp `i `uc ]
+"692
+[; ;GPIO.c: 692:             break;
+[e $U 155  ]
+"693
+[; ;GPIO.c: 693:         case 1u:
+[e :U 158 ]
+"694
+[; ;GPIO.c: 694:             *(volatile uint8*)0x06 ^= 0xFF;
+[e =^ *U -> -> 6 `i `*Vuc -> -> 255 `i `uc ]
+"695
+[; ;GPIO.c: 695:             break;
+[e $U 155  ]
+"696
+[; ;GPIO.c: 696:         case 2u:
+[e :U 159 ]
+"697
+[; ;GPIO.c: 697:             *(volatile uint8*)0x07 ^= 0xFF;
+[e =^ *U -> -> 7 `i `*Vuc -> -> 255 `i `uc ]
+"698
+[; ;GPIO.c: 698:             break;
+[e $U 155  ]
+"699
+[; ;GPIO.c: 699:         case 3u:
+[e :U 160 ]
+"700
+[; ;GPIO.c: 700:             *(volatile uint8*)0x08 ^= 0xFF;
+[e =^ *U -> -> 8 `i `*Vuc -> -> 255 `i `uc ]
+"701
+[; ;GPIO.c: 701:             break;
+[e $U 155  ]
+"702
+[; ;GPIO.c: 702:         case 4u:
+[e :U 161 ]
+"703
+[; ;GPIO.c: 703:             temp = (*(volatile uint8*)0x09>>3)<<3;
+[e = _temp -> << >> -> *U -> -> 9 `i `*Vuc `i -> 3 `i -> 3 `i `uc ]
+"704
+[; ;GPIO.c: 704:             *(volatile uint8*)0x09 ^= 0xFF;
+[e =^ *U -> -> 9 `i `*Vuc -> -> 255 `i `uc ]
+"705
+[; ;GPIO.c: 705:             *(volatile uint8*)0x09 = ((*(volatile uint8*)0x09<<5)>>5) | temp;
+[e = *U -> -> 9 `i `*Vuc -> | >> << -> *U -> -> 9 `i `*Vuc `i -> 5 `i -> 5 `i -> _temp `i `uc ]
+"706
+[; ;GPIO.c: 706:             break;
+[e $U 155  ]
+"707
+[; ;GPIO.c: 707:         default:
+[e :U 162 ]
+"709
+[; ;GPIO.c: 709:             retVal = GPIO_UNCORRECT_SET;
+[e = _retVal . `E10 1 ]
+"710
+[; ;GPIO.c: 710:             break;
+[e $U 155  ]
+"711
+[; ;GPIO.c: 711:     }
+}
+[e $U 155  ]
+[e :U 156 ]
+[e [\ -> _a_u8port `i , $ -> -> 0 `ui `i 157
+ , $ -> -> 1 `ui `i 158
+ , $ -> -> 2 `ui `i 159
+ , $ -> -> 3 `ui `i 160
+ , $ -> -> 4 `ui `i 161
+ 162 ]
+[e :U 155 ]
+"712
+[; ;GPIO.c: 712:     return retVal;
+[e ) _retVal ]
+[e $UE 154  ]
+"713
+[; ;GPIO.c: 713: }
+[e :UE 154 ]
+}
+"726
+[; ;GPIO.c: 726: void GPIO_Disable_Comparator_On_PORTA(void)
+[v _GPIO_Disable_Comparator_On_PORTA `(v ~T0 @X0 1 ef ]
+"727
+[; ;GPIO.c: 727: {
+{
+[e :U _GPIO_Disable_Comparator_On_PORTA ]
+[f ]
+"729
+[; ;GPIO.c: 729:     *(volatile uint8*)0x9C |=0x07;
+[e =| *U -> -> 156 `i `*Vuc -> -> 7 `i `uc ]
+"730
+[; ;GPIO.c: 730: }
+[e :UE 163 ]
+}
+"744
+[; ;GPIO.c: 744: EnumGPIO_Status_t GPIO_Disable_ADC_On_Pins(uint8 a_u8port , uint8 a_u8pin)
+[v _GPIO_Disable_ADC_On_Pins `(E10 ~T0 @X0 1 ef2`uc`uc ]
+"745
+[; ;GPIO.c: 745: {
+{
+[e :U _GPIO_Disable_ADC_On_Pins ]
+"744
+[; ;GPIO.c: 744: EnumGPIO_Status_t GPIO_Disable_ADC_On_Pins(uint8 a_u8port , uint8 a_u8pin)
+[v _a_u8port `uc ~T0 @X0 1 r1 ]
+[v _a_u8pin `uc ~T0 @X0 1 r2 ]
+"745
+[; ;GPIO.c: 745: {
+[f ]
+"747
+[; ;GPIO.c: 747:     *(volatile uint8*)0x9F &= ~(1 << 3);
+[e =& *U -> -> 159 `i `*Vuc -> ~ << -> 1 `i -> 3 `i `uc ]
+"748
+[; ;GPIO.c: 748:     *(volatile uint8*)0x9F |= 0x06;
+[e =| *U -> -> 159 `i `*Vuc -> -> 6 `i `uc ]
+"749
+[; ;GPIO.c: 749: }
+[e :UE 164 ]
+}
+"762
+[; ;GPIO.c: 762: void GPIO_Enable_Pull_Up_On_PortB(void)
+[v _GPIO_Enable_Pull_Up_On_PortB `(v ~T0 @X0 1 ef ]
+"763
+[; ;GPIO.c: 763: {
+{
+[e :U _GPIO_Enable_Pull_Up_On_PortB ]
+[f ]
+"764
+[; ;GPIO.c: 764:     *(volatile uint8*)0x81 &= ~(1 << 7u);
+[e =& *U -> -> 129 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"765
+[; ;GPIO.c: 765: }
+[e :UE 165 ]
+}
+"778
+[; ;GPIO.c: 778: void GPIO_Disable_Pull_Up_On_PortB(void)
+[v _GPIO_Disable_Pull_Up_On_PortB `(v ~T0 @X0 1 ef ]
+"779
+[; ;GPIO.c: 779: {
+{
+[e :U _GPIO_Disable_Pull_Up_On_PortB ]
+[f ]
+"780
+[; ;GPIO.c: 780:     *(volatile uint8*)0x81 |= 1 << 7u;
+[e =| *U -> -> 129 `i `*Vuc -> << -> 1 `i -> 7 `ui `uc ]
+"781
+[; ;GPIO.c: 781: }
+[e :UE 166 ]
+}

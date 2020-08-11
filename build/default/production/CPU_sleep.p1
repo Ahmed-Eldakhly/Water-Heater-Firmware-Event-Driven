@@ -1,0 +1,16 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"39 CPU_sleep.c
+[; ;CPU_sleep.c: 39: void CPU_sleep(void)
+[v _CPU_sleep `(v ~T0 @X0 1 ef ]
+"40
+[; ;CPU_sleep.c: 40: {
+{
+[e :U _CPU_sleep ]
+[f ]
+"42
+[; ;CPU_sleep.c: 42:     __asm(" sleep");
+[; <"  sleep ;# ">
+"43
+[; ;CPU_sleep.c: 43: }
+[e :UE 1 ]
+}
